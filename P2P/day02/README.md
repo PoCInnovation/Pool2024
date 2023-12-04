@@ -646,7 +646,3 @@ Organization
 </p>
 
 > :rocket: Follow us on our different social networks, and put a star 🌟 on `PoC's` repositories.
-
-```
-
-```
