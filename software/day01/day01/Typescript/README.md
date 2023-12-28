@@ -7,7 +7,7 @@ concept of frontend, backend, data storage... with a piece of devops.
 
 **Day purposes**
 
-✔️ Setup a NodeJS project.
+ Setup a NodeJS project.
 
 ✔️ Learn the basics of Typescript.
 
@@ -106,11 +106,13 @@ We recommend you [VSCode](https://code.visualstudio.com) or [WebStorm](https://w
 > You can get a free JetBrains license using your [school account](https://console.bocal.org/#/login).
 
 ## Step 0 - Setup
-
+### 📑 Description:
 As usual, every exercises must be pushed to a git repository.<br>
 
+### 📚 Documentation:
 To make it easier, we will use a GitHub classroom! Follow this [link](https://classroom.github.com/a/DoR-K1PO) to create your git repository.
 
+### 📌 Tasks:
 You can then clone your repository.
 
 ```shell
@@ -124,13 +126,14 @@ mkdir -p day01
 ```
 
 ## Step 1 - Hello World
-
+### 📑 Description:
 It's time to start coding! We will start with a simple `Hello World` program.
 
 ### Initialization
 
 First, we must create a new NodeJS project and setup Typescript inside it.
 
+### 📌 Tasks:
 To create you project, use this command from npm:
 
 ```shell
@@ -172,6 +175,7 @@ In this file, create a function `helloWorld` that will [display](https://nodejs.
 
 Don't call it directly in this file, instead [export it](https://www.typescriptlang.org/docs/handbook/modules.html).
 
+### 📚 Documentation:
 ### Where's the main?
 
 Now create a file `index.ts`, then import and call you `helloWorld` function inside it 🚀
@@ -195,6 +199,7 @@ Write a script `start` that will execute the command `ts-node src/index.ts`.
 
 > 💡 Using [`ts-node`](https://www.npmjs.com/package/ts-node) enables you to directly execute TypeScript on NodeJS without precompiling it
 
+### ✔️ Validation:
 You can run a script defined in your `package.json` using `npm run <script name>`.<br>
 So to run your program, type `npm run start` in your terminal and press enter to see your `Hello World!` message 🎉
 
@@ -203,10 +208,12 @@ So to run your program, type `npm run start` in your terminal and press enter to
 Congratulation! You have run your first Typescript program 🚀
 
 ## Step 2 - Sort my numbers
-
+### 📑 Description:
 Printing stuff is great, but a real program is composed of logic. This is what we will
 learn here.
 
+
+### 📌 Tasks:
 Let's start with a `sort numbers`!
 
 The goal is to: 
@@ -224,12 +231,13 @@ Inside it, create a function `getSortedEvenNumbers`:
 - It takes an `array` of `number` as parameter.
 - It returns a `string` composed of all even numbers in ascendant order split by a `-`.
 
+### 📚 Documentation:
 > 💡 You should have a look at the [sort](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array/sort),
 > [filter](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
 > and [join](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array/join) methods.
 
 Update `src/index.ts` to call your function and run your program to check if it's working 💯
-
+### ✔️ Validation:
 Here's an example for the following input: `[1, 0, 19, 17, 16, 8, 13, 24]`.
 
 ```text
@@ -239,12 +247,12 @@ Here's an example for the following input: `[1, 0, 19, 17, 16, 8, 13, 24]`.
 You can try other combinations by manually changing your code or, you can write **tests** 🧪
 
 ### Test like a pro
-
+### 📑 Description:
 It's really important to correctly test your code, a code not tested can lead
  to unpredictable bugs and the time lost to debug it could be avoided by creating some tests.
 
 To do so, we will use [Jest](https://jestjs.io), the most popular Javascript testing tool.
-
+### 📌 Tasks:
 Start by installing it
 
 ```shell
@@ -283,7 +291,7 @@ To make sure your `getSortedEvenNumbers` works as intended, you can write a test
 - Only positive numbers
 - Only negative numbers
 - Mixed numbers
-
+### ✔️ Validation:
 <Details>
   <Summary>
   <strong>Example of a test</strong>
@@ -349,11 +357,11 @@ npm run test
 ⚠️ Don't forget to add the directory `coverage` in your `.gitignore`.
 
 ## Step 3 - Hello asynchronicity
-
+### 📑 Description:
 You should have understood Typescript core concept, now it's time for the
 most important concept and unfortunately, the hardest: **asynchronicity**.
 
-### Theory
+### 📚 Documentation:
 
 > ⚠️ Take your time to read the links given in this part before coding.
 > If you do not understand asynchronicity, you won't be able to understand
@@ -369,6 +377,7 @@ You'll see the result of the second before the first one 🤯
 This fact raises a lot of constraints because sometime, you need to get the
 result of a function to send it to another.
 
+
 To solve this issue, the [callback](https://codeburst.io/javascript-what-the-heck-is-a-callback-aba4da2deced)
 system appeared, but unfortunately it creates new problems and huge codebase with
 the [callback hell](https://www.geeksforgeeks.org/what-is-callback-hell-in-node-js/).
@@ -380,7 +389,7 @@ To use it, we use the [async/await](https://developer.mozilla.org/en-US/docs/Web
 
 > If you are lost don't hesitate to ask the staff for help, they'll be happy to help you understand this concept 😜
 
-### Practice
+### 📌 Tasks:
 
 Let's practice: you'll create a program that displays `Hello` and the name
 wrote by the user in the terminal.
@@ -413,6 +422,7 @@ where `${name}` is the result of `askName`.
 
 To test your function, update `src/index.ts` to call `helloName`.
 
+### ✔️ Validation:
 You should get the following result:
 
 ```text
@@ -423,9 +433,10 @@ Hello Slim Shady!
 > To see the effect of the asynchronicity, remove some `await` in your program and try again.
 
 ## Step 4 - Clean Code
-
+### 📑 Description:
 Before going through complex exercises, we are going to set up guardians of clean code.
 
+### 📚 Documentation:
 There are two tools well known in Node for this:
 - [Eslint](https://eslint.org) will set rules to make your code follow a standard.
 It will help to ensure the codebase is clean and spot errors before you run your code.
@@ -434,6 +445,7 @@ the codebase, which is very useful when collaborating with other developers on a
 
 We will also customize the behavior of Typescript using a [dedicated config file](https://www.typescriptlang.org/tsconfig).
 
+### 📌 Tasks:
 Create a `tsconfig.json` file with the following content:
 ```json
 {
@@ -562,7 +574,7 @@ There are also extensions available:
 - [WebStorm](https://www.jetbrains.com/help/webstorm/prettier.html)
 
 ## Step 5 - Artists Book v1.0
-
+### 📑 Description:
 You are ready for a complex exercise. Let's create our first application!
 
 It will be a program that helps you manage your favorite artists from your terminal 🎵
@@ -603,6 +615,7 @@ What do you want to do?
 See you!
 ```
 
+### 📚 Documentation:
 To do this, we must build a program that follows a strong architecture.
 We will use one of the most popular: [MVC](https://www.calhoun.io/using-mvc-to-structure-go-web-applications/).
 
@@ -614,6 +627,7 @@ We will now adapt MVC to our need, don't worry if we do not strictly follow the 
 Here's a schema of your architecture:
 ![Artists Book architecture](../../../.github/assets/software_mvc.png)
 
+### 📌 Tasks:
 Let's code it step by step 😄
 
 ### Router
@@ -704,8 +718,7 @@ can store data. Here, it will be a simple `JSON` file.
 
 You will need to modify your `tsconfig.json` to [import `.json` files](https://www.typescriptlang.org/tsconfig#resolveJsonModule) 😉
 
-### Summary
-
+### ✔️ Validation:
 Finally, you should have the following architecture:
 
 ```text
@@ -730,15 +743,17 @@ This exercise may seems hard but if you write your code step by step, it will
 be a piece of cake 🍰!
 
 ## Step 6 - Artists Book v2.0
-
+### 📑 Description:
 You've built the base of your MVC architecture, it's time to improve it 📈
 
 For now, you can only read data, let's add operations to create, update or delete it.
 
+### 📚 Documentation:
 Those four primitive operations are mandatory to manage a resource in a data storage.
 They are usually called [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete),
 which stands for **CREATE - READ - UPDATE - DELETE**.
 
+### 📌 Tasks:
 Let's add the missing ones 🚀
 
 ### CREATE
@@ -1104,11 +1119,12 @@ You should have a result similar to this one:
 <br>
 
 ## Step 7 - Artists Book v3.0
-
+### 📑 Description:
 You have implemented a complete MVC architecture, that's excellent 🚀
 
 Only one thing is missing, our data is too basic, it only has a name.
 
+### 📌 Tasks:
 Let's add some fields by updating the `Artist` type:
 - `id`: A [unique identifier](https://en.wikipedia.org/wiki/Universally_unique_identifier) of type `string`
 - `top`: Best song, as a `string`
@@ -1124,7 +1140,7 @@ You'll have to update all your codebase to support those new fields.
 > And if you struggle, remember that the staff is here to help you out 😃
 
 ## Bonus
-
+### 📑 Description:
 First, congratulation! You've survived day 1 👏
 
 Below you'll see two bonuses to challenge you.
@@ -1148,6 +1164,7 @@ You can maybe start by adding the **CRUD** for your new `Music` resource.
 
 Your MVC is build with the imperative paradigm. 
 
+### 📚 Documentation:
 But actually, when you are managing resource, it's much more natural to do it
 in an [object oriented](https://dev.to/kevin_odongo35/object-oriented-programming-with-typescript-574o) way 😉
 
