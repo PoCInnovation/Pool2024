@@ -10,7 +10,7 @@
 curl -L https://foundry.paradigm.xyz | bash
 ```
 
-. This will download foundryup.
+This will download foundryup.
 
 - Then, you can download foundry by running `foundryup`
 - If everything went fine you should be able to use `forge`, `anvil`, `chisel` and `cast`.
