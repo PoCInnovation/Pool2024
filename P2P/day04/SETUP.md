@@ -1,78 +1,92 @@
-## Create your web application with react
-```sh
-npx create-react-app my-dapp
-```
-### This installation will take a while, do not worry.
+# Setup - Foundry & VSCode extension & Svelte setup
 
-```sh
-cd my-app
-npm install --save-dev hardhat # Install hardhat in your project
-npx hardhat # Press enter and accept everything, this will create your hardhat project
-npm install @openzeppelin/contracts # OpenZeppelin is a great tool and a standard for blockchain development. It makes creating smart contracts very easy with their blueprints smart contracts
-```
+[Foundry](https://book.getfoundry.sh/) is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust. We will need it throughout the pool.
 
-```sh
-npm install react-router-dom # This will be helpful to build multiple pages in your app
-npm install @chakra-ui/react @emotion/react @emotion/styled framer-motion #For the style of your website
+## Download foundry
+
+- Open your terminal and type
+
+```bash
+curl -L https://foundry.paradigm.xyz | bash
 ```
 
-## Infura
+This will download foundryup.
 
-Infura is a powerful tool that helps you interact with blockchain. In our case, it will make it easy to call functions on the ethereum blockchain.
+- Then, you can download foundry by running `foundryup`
+- If everything went fine you should be able to use `forge`, `anvil`, `chisel` and `cast`.
+- If you are on macos you will need to install `libusb` with
 
-## Installation
+```bash
+brew install libusb
+```
 
-Go on [Infura](https://www.infura.io/), login and create a project
+After the installation, run the following command to ensure it has been properly installed on your computer:
 
-Create new key
+```bash
+forge --version
+```
 
-Select network : Web3 API
+It should print your current version.
 
-Give it a name and you're ready to go !
+If you have some troubles during the installation, you can refer to the [official documentation](https://book.getfoundry.sh/getting-started/installation).
 
-You're on the dashboard
+## Create a foundry project
 
-Under Ethereum, click on mainnet and select Görli
+Once everything is done, you can create a new project using
 
-Copy the link and paste it in the hardhat.config.js
+```bash
+forge init new_project
+cd new_project
+```
 
+This should create a new directory with a brand new foundry project
 
+If you already have a repository, you might need to add
 
-hardhat.config.js:
-```js
-require("@nomicfoundation/hardhat-toolbox");
+```bash
+--no-commit
+```
 
-/** @type import('hardhat/config').HardhatUserConfig */
-module.exports = {
-  solidity: "0.8.9",
-  defaultNetwork: "goerli",
-  etherscan: {
-    apiKey: "FILL-IN-ETHERSCAN-API-KEY"
-  },
-  networks: {
-    goerli: {
-      url: "https://goerli.infura.io/v3/FILL-IN-INFURA-PROJECT-URL",
-      accounts: ["FILL-IN-INFURA-API-KEY"]
-    }
+The first thing you wants to do is set the solidity version of this project in the `foundry.toml` file wich is the configuration file of foundry.
+
+You can do this by adding in the "[profile.default]" section:
+
+```toml
+solc_version = "0.8.20"
+```
+
+## VSCode Integration
+
+I recommand you to install [solidity vscode extension](https://marketplace.visualstudio.com/items?itemName=NomicFoundation.hardhat-solidity), it is an extension that simplifies development in Solidity.
+
+Also, I recommand you to use the extension formatter. It will format your code on save, which allows you to have a clean codebase. To do so:
+
+- Create a `.vscode/settings.json` file with this content
+
+```json
+{
+  "editor.formatOnSave": true,
+  "[solidity]": {
+    "editor.defaultFormatter": "NomicFoundation.hardhat-solidity"
   }
-};
+}
 ```
 
+## Create a sveltekit application
 
-## Metamask
+Assuming you already have `nodejs` and `pnpm` installed, create a new sveltekit application.
+Checkout the [svelte and sveltekit tutotial](https://learn.svelte.dev/tutorial/welcome-to-svelte) if tou are a noob.
 
-Download [Metamask extension](https://metamask.io/)
+```bash
+pnpm create svelte@latest if_you_copy_paste_this_you_are_a_sheep
+```
 
-Copy your private key under the 3 dots menu > account details > export private key
+Install the packages we will need
 
-Paste it in the hardhat.config.js file.
+```bash
+pnpm add viem
+```
 
+## Back to the workshop
 
-## Faucets
-
-### What are faucets ?
-
-Faucets let you earn fake money that can be used on testnet networks. They will be very useful since you need money to pay the transaction fees on the blockchain.
-
-Get some ether on [Goerli Faucet](https://goerlifaucet.com/). They will appear shortly on your account (on the goerli test network) <!-- markdown-link-check-disable-line -->
-
+[Jump !](./README.md)

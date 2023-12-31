@@ -2,24 +2,19 @@
 
 **Day purposes**
 
-✔ Create a hardhat project to setup your ethereum development environment
+✔ Create a foundry project to setup your ethereum development environment
 
 ✔ Create an ERC 721 smart contract
 
 ✔ Build your application to interact with your contract
 
-
 ## Introduction
 
-**What is Hardhat ?**
-
-[Hardhat](https://hardhat.org) is a tool that will help you build your decentralized apps on an ethereum environment. Hardhat helps you compile, deploy your smart contracts and many other useful things. It is also helpful in the development phase to use local networks.
+Decentralized applications are applications that interact with the blockchain. For example when you want to swap some tokens on uniswap, you are using a decentralized application. The goal of this day is to create your own decentralized application that will interact with your ERC 721 smart contract.
 
 ## Step 0 - Setup
 
 Please refer to [SETUP.md](SETUP.md) file.
-
-
 
 ## Step 1 - Connecting your wallet to your web application
 
@@ -29,19 +24,17 @@ The goal of this task is to connnect your wallet to your web application and be 
 
 ### 📌 **Tasks**:
 
-- Create a button that will ask you to connect your metamask wallet to the website
+- Create a button that will ask you to connect your wallet to the website
 - Display your account's balance
 - Display your account's address
 
 ### 📚 **Documentation**:
 
-Check out the [documentation](https://docs.ethers.org/v5/getting-started/#getting-started--connecting) of ethersjs to connect your wallet.
+Check out the [documentation](https://viem.sh/docs/getting-started.html) of viem and their [examples](https://github.com/wevm/viem/tree/main/examples) to connect your wallet.
 
 ### ✔️ **Validation**:
 
 You can now ask to the user to connect their wallet and display information about it on the page !
-
-
 
 ## Step 2 - Smart Contract
 
@@ -63,8 +56,6 @@ Refer to this [page](https://www.openzeppelin.com/contracts) to create your smar
 
 Your smart contract is created and deployed on the goerli testnet !
 
-
-
 ## Step 3 - Calling your smart contract's functions from your application
 
 ### 📑 **Description**:
@@ -78,13 +69,11 @@ The first one we are going to call is the `mint` function, which will let us cre
 
 ### 📚 **Documentation**:
 
-Quick tip: You can pass an additional object when calling your smart contract's function and a `value` property. 😉
+Get the ABI of your smart contract and use it with `viem` to call the `mint` function on your smart contract.
 
 ### ✔️ **Validation**:
 
-You minted your first NFT and can now see it in your collection in your [opensea testnet](https://testnets.opensea.io/account) account. <!-- markdown-link-check-disable-line -->
-
-
+You minted your first NFT and can now see it in your collection in your [opensea testnet](https://testnets.opensea.io/account) account.
 
 ## Step 4 - Let's see our NFTs
 
@@ -100,13 +89,11 @@ Minting NFTs is fun, but we want to see them now right ? Let's do it !
 
 ### 📚 **Documentation**:
 
-To display react components from a list, check out the [map() function](https://reactjs.org/docs/lists-and-keys.html#embedding-map-in-jsx) to iterate through an array and display elements out of it.
+Check out the [sveltkit docs](https://kit.svelte.dev/docs/routing) to learn more about routing.
 
 ### ✔️ **Validation**:
 
 You can now see all your NFTs on a new `/collection` page.
-
-
 
 ## Step 5 - Transferring NFTs
 
@@ -120,39 +107,32 @@ Let's send an NFT to your friends !
 
 ### 📚 **Documentation**:
 
-Check out the [ERC721 OpenZeppelin doc](https://docs.openzeppelin.com/contracts/2.x/api/token/erc721) and find the 
+Check out the [ERC721 OpenZeppelin doc](https://docs.openzeppelin.com/contracts/2.x/api/token/erc721) and find the transfer function.
 
 ### ✔️ **Validation**:
 
 You can now send an NFT to another address ! Well done !!
 
-
-
-
 ## Bonus - Styling
 
-Your application might not look really good. Use some stylesheets to make it beautiful !
-
-There are a lot of ways to add style with react. Feel free to try one of the following :
-[Standard CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
-[Chakra UI](https://chakra-ui.com/)
-[Styled Components](https://styled-components.com/)
-
+Your application might not look really good. Use some styles to make it beautiful !
+If you don't use tailwind, I will look for you, I will find you, and ... I will kill you !
 
 ## Conclusion
 
 Well done ! You've accomplished a lot today, and there is so much more to discover.
 Refer to the official documentations to deep-dive into these technologies :
-  - [React](https://reactjs.org/docs/getting-started.html)
-  - [Ethersjs](https://docs.ethers.org/v5/)
-  - [Solidity](https://docs.soliditylang.org/en/v0.8.17/)
+
+- [Svelte](https://svelte.dev/docs/)
+- [Viem](https://viem.sh/docs/getting-started.html)
+- [Solidity](https://docs.soliditylang.org/en/v0.8.23/) (you should despise this website as it is made with chakra UI and we all know chakra UI is dog poop)
 
 Hope you enjoyed this day !
 
 ## Authors
 
-| [<img src="https://github.com/alexandregrare.png?size=85" width=85><br><sub>Alexandre Grare</sub>](https://github.com/alexandregrare) | [<img src="https://github.com/Toumi-Elyes.png?size=85" width=85><br><sub>Elyes Toumi</sub>](https://github.com/Toumi-Elyes) | [<img src="https://github.com/tonida-rodda.png?size=85" width=85><br><sub>Toni Da-Rodda</sub>](https://github.com/tonida-rodda) |
-| :---: | :---: | :---: |
+| [<img src="https://github.com/letamanoir.png?size=85" width=85><br><sub>Martin Saldinger</sub>](https://github.com/letamanoir) | [<img src="https://github.com/alexandregrare.png?size=85" width=85><br><sub>Alexandre Grare</sub>](https://github.com/alexandregrare) | [<img src="https://github.com/Toumi-Elyes.png?size=85" width=85><br><sub>Elyes Toumi</sub>](https://github.com/Toumi-Elyes) | [<img src="https://github.com/tonida-rodda.png?size=85" width=85><br><sub>Toni Da-Rodda</sub>](https://github.com/tonida-rodda) |
+| :----------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------: |
 
 <h2 align=center>
 Organization
