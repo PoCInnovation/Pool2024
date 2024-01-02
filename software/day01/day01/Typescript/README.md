@@ -1140,7 +1140,6 @@ You'll have to update all your codebase to support those new fields.
 > And if you struggle, remember that the staff is here to help you out 😃
 
 ## Bonus
-### 📑 Description:
 First, congratulation! You've survived day 1 👏
 
 Below you'll see two bonuses to challenge you.
