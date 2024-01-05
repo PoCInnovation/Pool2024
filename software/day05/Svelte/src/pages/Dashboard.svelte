@@ -1,9 +1,9 @@
 <script lang="ts">
-    import { Gallery, Card, Avatar, Rating } from "flowbite-svelte";
-    import type { Artist } from "../types/Artist.svelte";
+    import { Gallery } from "flowbite-svelte";
     import TopBar from "../components/Bar/TopBar.svelte";
     import ArtistCard from "../components/Card/ArtistCard.svelte";
-    
+    import type { Artist } from "../types/Artist.svelte";
+
     let artists:Artist[] = [
         { id: "1",
         name: "Booba",
@@ -30,4 +30,3 @@
         {/each}
     </Gallery>
 </div>
-

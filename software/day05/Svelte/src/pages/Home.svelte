@@ -1,23 +1,23 @@
 <script>
-    import { push } from "svelte-spa-router";
-    import { Heading, P, A, Mark, Secondary, Button } from 'flowbite-svelte';
+    import { Button, Heading } from 'flowbite-svelte';
+    import { navigate } from "svelte-routing";
 
     const goToLogin = () => {
-        push("/login");
+        navigate("/login");
     }
 
     const goToRegister = () => {
-        push("/register");
+        navigate("/register");
     }
 </script>
 
 <div class="flex flex-col text-center">
-    <Heading tag="h1" class="text-center">Artists Book</Heading>
+    <Heading id="app-title" tag="h1" class="text-center">Artists Book</Heading>
     <br/>
-    <p class="text-lg text-center">Manage your favorite artists</p>
+    <p id="app-sub-title" class="text-lg text-center">Manage your favorite Artists</p>
     <br/>
 </div>
 <div class="text-center">
-    <Button on:click={goToLogin}>Login</Button>
-    <Button on:click={goToRegister}>Register</Button>
+    <Button id="homePage-login-button" on:click={goToLogin}>Login</Button>
+    <Button id="homePage-register-button" on:click={goToRegister}>Create an account</Button>
 </div>

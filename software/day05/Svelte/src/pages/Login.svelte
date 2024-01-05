@@ -1,6 +1,6 @@
 <script>
-    import { Heading, Input, Button } from "flowbite-svelte";
-    import { push } from "svelte-spa-router";
+    import { Button, Heading, Input } from "flowbite-svelte";
+    import { navigate } from "svelte-routing";
 
     let email = "";
     let password = "";
@@ -8,18 +8,18 @@
     const userLoggedIn = () => {
         console.log("Email", email);
         console.log("Password", password);
-        push("/dashboard");
+        navigate("/dashboard");
     }
 
     const goToRegister = () => {
-        push("/register");
+        navigate("/register");
     }
 </script>
 
-<Heading tag="h1" class="text-center">Login</Heading>
+<Heading id="app-title" tag="h1" class="text-center">Login</Heading>
 <br/>
 <Input type="email" placeholder="Email" bind:value={email} />
 <Input type="password" placeholder="Password" bind:value={password} />
 <br/>
-<Button on:click={userLoggedIn}>Login</Button>
-<Button on:click={goToRegister}>New user ? Register</Button>
+<Button id="loginPage-login-button" on:click={userLoggedIn}>Login</Button>
+<Button id="loginPage-register-button" on:click={goToRegister}>New user ? Register</Button>

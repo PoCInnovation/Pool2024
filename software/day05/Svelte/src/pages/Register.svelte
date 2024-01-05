@@ -1,7 +1,7 @@
 <script>
     import { Button, Heading, Input } from "flowbite-svelte";
-    import { push } from "svelte-spa-router";
-    
+    import { navigate } from "svelte-routing";
+
     let email = "";
     let password = "";
     let confirmedPassword = "";
@@ -10,11 +10,11 @@
         console.log("Email", email);
         console.log("Password", password);
         console.log("Confirmed password", confirmedPassword);
-        push("/dashboard");
+        navigate("/dashboard");
     }
 
     const goToLogin = () => {
-        push("/login");
+        navigate("/login");
     }
 </script>
 
@@ -24,5 +24,7 @@
 <Input type="password" placeholder="Password" bind:value={password}/>
 <Input type="password" placeholder="Confirm password" bind:value={confirmedPassword}/>
 <br/>
-<Button on:click={userRegistered}>Register</Button>
-<Button on:click={goToLogin}>Already a user ? Login</Button>
+<div class="flex justify-center">
+    <Button id="registerPage-register-button" on:click={userRegistered}>Register</Button>
+    <Button id="registerPage-login-button" on:click={goToLogin}>Already a user ? Login</Button>
+</div>

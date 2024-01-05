@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "check": "svelte-check --tsconfig ./tsconfig.json"
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "cypress:run": "cypress run",
+    "cypress:open": "cypress open"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^3.0.1",
@@ -26,7 +28,12 @@
     "vite": "^5.0.8"
   },
   "dependencies": {
+    "@types/jest": "^29.5.11",
+    "cypress": "^13.6.2",
     "nanoid": "^5.0.4",
-    "svelte-spa-router": "^4.0.0"
+    "svelte-routing": "^2.11.0"
+  },
+  "resolutions": {
+    "string-width": "4.2.3"
   }
 }
