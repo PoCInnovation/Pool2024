@@ -1,7 +1,7 @@
 <script lang="ts">
-    import { Navbar, NavUl, Button, A } from "flowbite-svelte";
-    import AddArtistButton from "../Button/AddArtistButton.svelte";
+    import { A, NavUl, Navbar } from "flowbite-svelte";
     import type { Artist } from "../../types/Artist.svelte";
+    import AddArtistButton from "../Button/AddArtistButton.svelte";
 
     export let artists:Artist[];
 </script>

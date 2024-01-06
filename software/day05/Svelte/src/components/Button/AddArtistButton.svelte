@@ -1,7 +1,7 @@
 <script lang="ts">
     import { Button } from "flowbite-svelte";
-    import AddArtistModal from "../AddArtistModal.svelte";
     import type { Artist } from "../../types/Artist.svelte";
+    import AddArtistModal from "../Modal/AddArtistModal.svelte";
 
     export let artists:Artist[];
     let openModal = false;
