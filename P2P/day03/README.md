@@ -17,6 +17,10 @@ By doing so, you will develop a vesting platform. A way to let your tokens stay 
 Compared to hardhat, foundry allows to develop much faster because of tests and scripts directly written in solidity with built in fuzzing.
 It is also written in rust so the runtime is way faster compared to javascript.
 
+A fundamental concept at the core of the contracts we are developing today is vesting. Vesting typically refers to the process by which an individual gradually gains ownership or entitlement to a specific asset or benefit over a defined period. This concept is commonly employed in the context of employee stock options or retirement plans but can also be applicable to other situations.
+
+Feel free to conduct some additional research to thoroughly comprehend the concept before proceeding further; it will aid you in the development process.
+
 ## Step 0 - Setup
 
 Please refer to the [SETUP.md](./SETUP.md) file.
