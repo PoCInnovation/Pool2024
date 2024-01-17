@@ -1,4 +1,4 @@
-# PoC Software Pool 2023 - Day 05 - Sv
+# PoC Software Pool 2023 - Day 05 - Svelte
 
 **Day purposes**
 
