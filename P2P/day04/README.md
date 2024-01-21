@@ -2,80 +2,68 @@
 
 **Day purposes**
 
-✔ Create a foundry project to setup your ethereum development environment
+✔ Build a decentralized application with Svelte
 
-✔ Create an ERC 721 smart contract
+✔ Interact with your ERC-721 smart contract
 
-✔ Build your application to interact with your contract
+✔ Learn about Viem
 
 ## Introduction
 
-Decentralized applications are applications that interact with the blockchain. For example when you want to swap some tokens on uniswap, you are using a decentralized application. The goal of this day is to create your own decentralized application that will interact with your ERC 721 smart contract.
+Decentralized applications are applications that interact with the blockchain. For example when you want to swap some tokens on uniswap, you are using a decentralized application. The goal of this day is to create your own decentralized application that will interact with your ERC-721 smart contract.
 
 ## Step 0 - Setup
 
-Please refer to [SETUP.md](SETUP.md) file.
+Please refer to [SETUP.md](SETUP.md) file. It is not the same as the previous day.
 
 ## Step 1 - Connecting your wallet to your web application
 
 ### 📑 **Description**:
 
-The goal of this task is to connnect your wallet to your web application and be able to get its balance and display it to the user.
+The goal of this task is to connnect your wallet to your web application and be able to get its balance and display it to the user. You will use the `viem` library to do so. `Viem` is a typescript interface for ethereum. It will allow us to interact with the blockchain. For this step, you will need to have a wallet with some testnet ether on it. You can use [metamask](https://metamask.io/) and [sepolia faucet](https://sepoliafaucet.com/) for example.
 
 ### 📌 **Tasks**:
 
+In the `src/routes/+page.svelte` file:
+
 - Create a button that will ask you to connect your wallet to the website
-- Display your account's balance
 - Display your account's address
+- Display your account's balance
+  > 💡 Use `sepolia` instead of `mainet`
 
 ### 📚 **Documentation**:
 
+Take a look at [Svelte examples](https://svelte.dev/examples/hello-world).
 Check out the [documentation](https://viem.sh/docs/getting-started.html) of viem and their [examples](https://github.com/wevm/viem/tree/main/examples) to connect your wallet.
 
 ### ✔️ **Validation**:
 
 You can now ask to the user to connect their wallet and display information about it on the page !
 
-## Step 2 - Smart Contract
+## Step 2 - Calling your smart contract's functions from your application
 
 ### 📑 **Description**:
 
-During this step, you will create your smart contract that will let you mint NFTs.
-
-### 📌 **Tasks**:
-
-- Create an ERC721 token from the template
-  - Make it mintable with an auto-incrementing id
-  - Make it hold an URI
-
-### 📚 **Documentation**:
-
-Refer to this [page](https://www.openzeppelin.com/contracts) to create your smart contract.
-
-### ✔️ **Validation**:
-
-Your smart contract is created and deployed on the goerli testnet !
-
-## Step 3 - Calling your smart contract's functions from your application
-
-### 📑 **Description**:
+During this step, you will use your ERC-721 smart contract that you created in the day02. If you didn't do the day 2, please do it before or take the [openzeppellin implementation](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/ERC721.sol).
 
 Your goal now is to call your smart contract's function from your web application in order to interact with it.
-The first one we are going to call is the `mint` function, which will let us create our NFT on the blockchain.
+The first one we are going to call is the `mint` function, which will let us create our NFT on the blockchain. To call this function, we need the address of your deployed contract and the "function prototypes" of your contract which is called `abi`.
 
 ### 📌 **Tasks**:
 
-- Create a button which will call the `mint` method of your smart contract and send the expected amount of ether, that is the mint price of your NFT.
+- Take the `CONTRACT_ADDRESS` of your ERC-721 contract that you have deployed. You will need it for the last task.
+- In the `out` folder of the day2, take the `PetNFT.json` which is in the `PetNFT.sol` folder. Put it in the `src` folder of your Svelte application. You will need it for the last task.
+- Now, create a button which will call the `mint` method of your ERC-721 contract.
 
 ### 📚 **Documentation**:
 
-Get the ABI of your smart contract and use it with `viem` to call the `mint` function on your smart contract.
+Take a look at [this](https://viem.sh/docs/contract/getContract.html), it will help you 😉.
 
 ### ✔️ **Validation**:
 
 You minted your first NFT and can now see it in your collection in your [opensea testnet](https://testnets.opensea.io/account) account.
 
-## Step 4 - Let's see our NFTs
+## Step 3 - Let's see our NFTs
 
 ### 📑 **Description**:
 
@@ -86,6 +74,8 @@ Minting NFTs is fun, but we want to see them now right ? Let's do it !
 - Create a new `/collection` page
 - Create a `getAllNFTs()` function in your smart contract to retrieve all NFTs
 - Call this function in your application and display them on the page
+  > 💡 For this function, you will need to import some `abi` from day2. You can find them in the `out`. I let you find which one you need 😉
+  > 💡 To get NFT information, you will need to call the `tokenURI` function of your ERC-721 contract.
 
 ### 📚 **Documentation**:
 
@@ -95,7 +85,7 @@ Check out the [sveltkit docs](https://kit.svelte.dev/docs/routing) to learn more
 
 You can now see all your NFTs on a new `/collection` page.
 
-## Step 5 - Transferring NFTs
+## Step 4 - Transferring NFTs
 
 ### 📑 **Description**:
 
