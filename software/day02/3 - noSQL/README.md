@@ -40,89 +40,94 @@ Today we will learn document database but other exists:
 ## Requirements
 
 There are many tools to manage a database. We give you the choice between
-[DataGrip](https://www.jetbrains.com/datagrip/) and [SQL IDE Online](https://sqliteonline.com).
+[DataGrip](https://www.jetbrains.com/datagrip/) and [Compass IDE](https://www.mongodb.com/products/tools/compass).
 
 > We recommend DataGrip for its powerful UX and easy adoption 😉
 
 In the folder [resources](./resources), you will find a file named 
-[database.sql](./resources/database.sql) to generate a new database
+[database.json](./resources/database.json) to generate a new database
 with artists and musics 🎵
 
 Here's a schema of our data:
-![Artists database](../../../.github/assets/software_bdd.png)
+![Artists database](../../../.github/assets/software/software_bdd.png)
 
-In document database, data is stored into a [table](https://www.postgresql.org/docs/9.2/ddl-basics.html)
-where each information is a [column](https://www.postgresql.org/docs/8.0/ddl.html).
+In document databases, data is stored into a [document](https://www.mongodb.com/docs/manual/core/document/) where each information is stored in an object as a [field-and-value](https://www.mongodb.com/docs/manual/core/document/).
 
-You can then create a [relation](https://hasura.io/learn/database/postgresql/core-concepts/6-postgresql-relationships/)
-between tables 😄
+You won't be using traditional relations as in a relational database, where you create [relationships](https://hasura.io/learn/database/postgresql/core-concepts/6-postgresql-relationships/) between tables 😄. Instead, in a document database, you have the flexibility to either [embed](https://www.mongodb.com/basics/embedded-mongodb) related data directly within a document or use [references](https://www.mongodb.com/docs/manual/reference/database-references/) to establish connections between documents.
 
-> 💡 You can find more information about PostgreSQL concepts [here](https://www.postgresql.org/docs/8.3/tutorial-concepts.html).
+> 💡 You can find more information about MongoDB concepts [here](https://www.mongodb.com/basics).
 
 > These concepts are important, if you are lost don't hesitate to ask the staff for help they'll be happy to help you understand 😜
 
 ### DataGrip
 
-> If you don't want to use DataGrip, move to the [SQL IDE Online](#sql-ide-online) setup.
+> If you don't want to use DataGrip, move to the [Compass IDE](#compass-ide) setup.
 
 First, download DataGrip using the [Jetbrains Toolbox](https://www.jetbrains.com/toolbox-app/).
 
-You can use [docker](https://www.docker.com) to run a [PostgreSQL](https://www.postgresql.org) 
-database with the following command in the directory containing the file `database.sql`
+You can use [docker](https://www.docker.com) to run a [MongoDB](https://www.mongodb.com/) 
+database and [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/) to run the script to fill the documents
 
 ```shell
 docker run -d \
-    -p 27017:27017 \
-    --name my-database \
-    -v mongo-data:/data/db \
-    -e MONGODB_INITDB_ROOT_USERNAME=root \
-    -e MONGODB_INITDB_ROOT_PASSWORD=password \
-    mongo:latest
+  --name poc-mongo-db \
+  -p 27017:27017 \
+  -e MONGO_INITDB_ROOT_USERNAME=admin \
+  -e MONGO_INITDB_ROOT_PASSWORD=pass \
+  -v db:/var/lib/mongodb/data \
+  mongo:latest
+```
+
+```shell
+npm run start
+## or
+yarn start
 ```
 
 > If you can't manage to connect to your database, try changing the POSTGRES_USER parameter to something else and reloading your container using ``docker rm``.
 
 > Don't worry about this command for now, you will learn docker during day04 👀
 
-Start DataGrip and create a new `Data Source` of type `PostgreSQL`.
+Start DataGrip and create a new `Data Source` of type `MongoDB`.
 
+Before entering the information chose the authentication method `User & Password`
+<br>
 Here's the information to fill in the form:
-- Database name: `my_database`
-- Username: `root`
-- Password: `password`
+- Database name: `admin`
+- Username: `admin`
+- Password: `pass`
 - Host: `localhost`
-- Port: `5432`
+- Port: `27017`
 
-> 💡 You will certainly have to download the PostgreSQL driver on your first connection.
+> 💡 You will certainly have to download the MongoDB driver on your first connection.
 
 Below you have an example of configuration:
-![DataGrip configuration](../../../.github/assets/software_postresql_connection.png)
+![DataGrip configuration](../../../.github/assets/software/software_postresql_connection.png)
 
 
 After applying the configuration, you should see a new data source in the left panel of DataGrip.
 
 Verify that you have something similar to the example below:
-![DataGrip data source](../../../.github/assets/software_postgresql_result.png)
+![DataGrip data source](../../../.github/assets/software/software_postgresql_result.png)
 
-> You can look a [these steps](https://www.jetbrains.com/help/datagrip/postgresql.html)
+> You can look a [these steps](https://www.jetbrains.com/help/datagrip/mongodb.html)
 > if you encounter an issue during the configuration.
 
-> 💡 If you are already familiar with You can use [pgAdmin](https://www.pgadmin.org) or 
-> [DBeaver](https://dbeaver.io) feel free to use them.
+### Compass IDE
 
-### SQL IDE Online
+> This is a official IDE by MongoDB for MongoDB
 
-> We do not recommend this solution because it's important to use professional tools, but you can use it if you want to go fast 🏃
-
-- Go to [SQL IDE Online](https://sqliteonline.com).
-- Click on `PostgreSQL` database.
-- Click on category `File`.
-- Open `database.sql`
-- Execute it with the button `Run`.
+- Go to [MongoDB Compass](https://www.mongodb.com/try/download/compass).
+- Click on `Platform` and select `Ubuntu`.
+- Click on `Download`.
+- Go to your `Downloads/` folder.
+- Execute this command: <br>
+    ```sudo dpkg -i mongodb-compass_1.41.0_amd64.deb```
+- Open compass from you applications
 
 You should get the following result
 
-![sql ide online result](../../../.github/assets/software_sql_online.png)
+![sql ide online result](../../../.github/assets/software/software_bdd_compass.png)
 
 ## Step 0 - Setup
 ### 📑 Description:

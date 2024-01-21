@@ -1,7 +1,7 @@
 {
   "artists": [
     {
-    	"_id": 1,
+      "_id": 1,
       "name": "Michael Jackson",
       "genre": "pop",
       "nbfans": 16000000
@@ -239,6 +239,100 @@
       "_id": 20,
       "name": "Paris c est loin",
       "certification": "Platinum"
+    }
+  ],
+  "participations": [
+    {
+      "artist": 1,
+      "musics": [1]
+    },
+    {
+      "artist": 2,
+      "musics": [2, 3, 11]
+    },
+    {
+      "artist": 3,
+      "musics": [4]
+    },
+    {
+      "artist": 4,
+      "musics": [5]
+    },
+    {
+      "artist": 5,
+      "musics": [6]
+    },
+    {
+      "artist": 6,
+      "musics": [7]
+    },
+    {
+      "artist": 7,
+      "musics": [8]
+    },
+    {
+      "artist": 8,
+      "musics": [9, 12, 19, 20]
+    },
+    {
+      "artist": 9,
+      "musics": [10]
+    },
+    {
+      "artist": 10,
+      "musics": [13]
+    },
+    {
+      "artist": 11,
+      "musics": [14]
+    },
+    {
+      "artist": 12,
+      "musics": [15]
+    },
+    {
+      "artist": 13,
+      "musics": [16]
+    },
+    {
+      "artist": 14,
+      "musics": [16, 17, 20]
+    },
+    {
+      "artist": 15,
+      "musics": [17]
+    },
+    {
+      "artist": 16,
+      "musics": [18]
+    },
+    {
+      "artist": 17,
+      "musics": [18]
+    },
+    {
+      "artist": 18,
+      "musics": [18]
+    },
+    {
+      "artist": 19,
+      "musics": [19]
+    },
+    {
+      "artist": 20,
+      "musics": [1]
+    },
+    {
+      "artist": 21,
+      "musics": [1]
+    },
+    {
+      "artist": 22,
+      "musics": [1]
+    },
+    {
+      "artist": 23,
+      "musics": [1]
     }
   ]
 }
