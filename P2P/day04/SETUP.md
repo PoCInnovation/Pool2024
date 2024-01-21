@@ -1,90 +1,33 @@
-# Setup - Foundry & VSCode extension & Svelte setup
+# Setup - Svelte setup
 
-[Foundry](https://book.getfoundry.sh/) is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust. We will need it throughout the pool.
+Today we will need to use a lot of new tools. Don't worry if you don't know them, you will guide to use them.
 
-## Download foundry
+First, we will need to install `nvm`. `nvm` is a node version manager, it will allow us to install multiple versions of `nodejs` and switch between them easily. `Nodejs` is a javascript runtime, it will allow us to run javascript outside of the browser. Click [here](https://github.com/nvm-sh/nvm#installing-and-updating) to install `nvm`.
 
-- Open your terminal and type
+Then, we will need to install `npm`. `npm` is a package manager, it will allow us to install packages. Normally, `npm` is installed with `nvm`. If it is not the case, click [here](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) to install `npm`.
 
-```bash
-curl -L https://foundry.paradigm.xyz | bash
-```
-
-This will download foundryup.
-
-- Then, you can download foundry by running `foundryup`
-- If everything went fine you should be able to use `forge`, `anvil`, `chisel` and `cast`.
-- If you are on macos you will need to install `libusb` with
+Now, we will install `Svelte`. `Svelte` is a javascript framework. It will allow us to create a web application, quickly and easily. To install `Svelte`, run the following command in your terminal.
 
 ```bash
-brew install libusb
+npm create svelte@latest if_you_copy_paste_this_you_are_a_sheep
 ```
 
-After the installation, run the following command to ensure it has been properly installed on your computer:
+Enter `y` to install `create svelte` package. Then, select `Skeleton project`, `Yes, using TypeScript syntax` and `Add ESLint for code linting`.
+
+Run your app to check if everything is working fine:
 
 ```bash
-forge --version
+cd if_you_copy_paste_this_you_are_a_sheep
+npm install
+npm run dev
 ```
 
-It should print your current version.
+Open your browser and go to `http://localhost:5173`. You should see a `Hello world!` message.
 
-If you have some troubles during the installation, you can refer to the [official documentation](https://book.getfoundry.sh/getting-started/installation).
-
-## Create a foundry project
-
-Once everything is done, you can create a new project using
+Finally, we will install `Viem`. `Viem` is a typescript interface for ethereum. It will allow us to interact with the blockchain. To install `Viem`, run the following command in your terminal.
 
 ```bash
-forge init new_project
-cd new_project
-```
-
-This should create a new directory with a brand new foundry project
-
-If you already have a repository, you might need to add
-
-```bash
---no-commit
-```
-
-The first thing you wants to do is set the solidity version of this project in the `foundry.toml` file wich is the configuration file of foundry.
-
-You can do this by adding in the "[profile.default]" section:
-
-```toml
-solc_version = "0.8.20"
-```
-
-## VSCode Integration
-
-I recommand you to install [solidity vscode extension](https://marketplace.visualstudio.com/items?itemName=NomicFoundation.hardhat-solidity), it is an extension that simplifies development in Solidity.
-
-Also, I recommand you to use the extension formatter. It will format your code on save, which allows you to have a clean codebase. To do so:
-
-- Create a `.vscode/settings.json` file with this content
-
-```json
-{
-  "editor.formatOnSave": true,
-  "[solidity]": {
-    "editor.defaultFormatter": "NomicFoundation.hardhat-solidity"
-  }
-}
-```
-
-## Create a sveltekit application
-
-Assuming you already have `nodejs` and `pnpm` installed, create a new sveltekit application.
-Checkout the [svelte and sveltekit tutotial](https://learn.svelte.dev/tutorial/welcome-to-svelte) if tou are a noob.
-
-```bash
-pnpm create svelte@latest if_you_copy_paste_this_you_are_a_sheep
-```
-
-Install the packages we will need
-
-```bash
-pnpm add viem
+npm install viem
 ```
 
 ## Back to the workshop
