@@ -74,7 +74,9 @@ Minting NFTs is fun, but we want to see them now right ? Let's do it !
 - Create a new `/collection` page
 - Create a `getAllNFTs()` function in your smart contract to retrieve all NFTs
 - Call this function in your application and display them on the page
+
   > 💡 For this function, you will need to import some `abi` from day2. You can find them in the `out`. I let you find which one you need 😉
+
   > 💡 To get NFT information, you will need to call the `tokenURI` function of your ERC-721 contract.
 
 ### 📚 **Documentation**:
