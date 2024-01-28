@@ -1,4 +1,4 @@
-# PoC p2p Pool 2023 - Day 02 - Solidity
+# PoC P2P Pool 2024 - Day 02 - Create & Deploy NFT
 
 ✔️ Advance solidty notion.
 

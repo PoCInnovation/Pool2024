@@ -1,4 +1,4 @@
-# P2P Pool 2023 - Day 01 - Solidity
+# PoC P2P Pool 2024 - Day 01 - Solidity
 
 ✔️ You'll learn how to create a smart contract and how to use variables and visibilities.
 
