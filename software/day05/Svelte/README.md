@@ -2,13 +2,11 @@
 
 **Day purposes**
 
-✔ Create your own User Interface (UI) with Svelte and Flowbite Svelte.
+✔ Create your own User Interface (UI) with Svelte and Flowbite Svelte ✨
 
-✔ Structure your UI.
+✔ Structure your UI 🚧
 
-✔ Test your UI.
-
-✔ Make your UI responsive.
+✔ Test your UI 🧑‍💻
 
 ## Introduction
 
@@ -16,7 +14,7 @@
 
 **What is a user interface?**
 
-A user interface (UI) is the point at which humans interact with a computer, a website or an application.
+A user interface (UI) is the point at which humans interact with a computer, a website or an application. 💻
 
 For instance, your terminal is a user interface.
 
@@ -26,7 +24,7 @@ Thanks to Svelte, you can build [components](https://svelte.dev/docs/svelte-comp
 
 > 💡 DOM stands for Document Object Model, which is the HTML representation of a web page. As a consequence, a DOM element is a part of the HTML representation of a web page.
 
-However, unlike [React](https://en.reactjs.org/), Svelte doesn't rely on a virtual DOM to update the actual DOM. Instead, it compiles your components into optimized Javascript code. This approach makes the rendering of your app more efficient.
+However, unlike [React](https://en.reactjs.org/), Svelte doesn't rely on a virtual DOM to update the actual DOM. Instead, it compiles your components into optimized Javascript code. This approach makes the rendering of your app more efficient. 🚀
 
 > The real DOM is the HTML representation of the web page that the user sees. It's updated by [queries](https://burlingtoncodeacademy.github.io/webdev-prework-track/DOM_queries). The virtual DOM is a copy of the real DOM.
 
@@ -79,62 +77,74 @@ Now that the foundations are laid for your project, it's time to dive into front
 
 ## Step 2 - Your first component 🚀
 
-Let's start by creating the Home page 😄
+### :bookmark_tabs: **Description**:
 
-**Requirements:**
-- The Home page must contain:
-  - a title `Artists Book`
-  - a subtitle `Manage your favorite artists`
+Let's start by creating the Home page 😄 
 
-**Constraints:**
-- Create the file `src/pages/Home.svelte` with a Svelte Component representing your Home page inside.
-> Take a look up at the [Heading](https://flowbite-svelte.com/docs/typography/heading) component in Flowbite Svelte 😉
-
+### :pushpin: **Tasks**:
+- Create the file `src/pages/Home.svelte` with a Svelte component representing your Home page inside.
+  It must contain:
+  - a title `Artists Book` 🧑‍🎤
+  - a subtitle `Manage your favorite artists` ⭐
 - Update the file `src/app/App.tsx` to call this component.
 
 > Remove the initial content of ```src/App.svelte``` to start off fresh.
 
-**Tips:**
+### :books: **Documentation**:
 - Check [what a Svelte component is made of](https://svelte.dev/docs/svelte-components) 👀
+- Take a look up at the [Heading](https://flowbite-svelte.com/docs/typography/heading) component in Flowbite Svelte 😉
+
+### ✔️ **Validation**:
+![Task 2 Preview](previews/task2-preview.png)
 
 Well done! You have created your first Svelte Component 🥳
 
 > 💡 A **great idea** is to create a folder `src/components` to store reusable components.
 
-
 ## Step 3 - Your first routes 🛤️
 
-Now that you have your Home page, it's time to have Register and Login pages reachable at the `/register` and `/login` URLs.
+### :bookmark_tabs: **Description**:
+Now that you have your Home page, it's time to have Register and Login pages reachable at the `/register` and `/login` URLs 😉
 
-**Requirements:**
-- The Home page must contain:
-  - A `Button` to the Register page.
-  - A `Button` to the Login page.
-- The Register page must contain:
+### :pushpin: **Tasks**:
+- Create the `src/pages/Register.svelte` file, which will contain the Register page.
+It must contain:
   - An `Input` to enter an `email`.
   - An `Input` to enter a `password`.
   - An `Input` to enter the `confirmed password`.
     > 💡 Text for the password inputs mut be replace by dots
   - A `Button` that when clicked, log the values of the email, the password and the confirmed password.
-  - A `Button` to the Login page.
-- The Login page must contain:
+
+- Create the `src/pages/Login.svelte` file, which will contain the Login page.
   - An `Input` to enter an `email`.
   - An `Input` to enter a `password` with text replaced by dots again.
   - A `Button` that when clicked, log the values of the email and the password.
   - A `Button` to the Register page.
 
-**Constraints:**
-- You must create the file `src/pages/Register.svelte`.
-- You must create the file `src/pages/Login.svelte`.
-- You must create the file `src/app/Routes.svelte` with a Svelte Component containing the Routes inside, called in `src/App.svelte`.
+- Create the `src/app/Routes.svelte` file, with a Svelte component containing the Routes inside, called in `src/App.svelte`.
 
-**Tips:**
-- Have a look at the Flowbite Svelte [Button](https://flowbite-svelte.com/docs/components/buttons) and [Input](https://flowbite-svelte.com/docs/components/forms#mainContent) components.
-- You should have a look at the [svelte-routing](https://github.com/remix-run/react-router/blob/main/docs/start/tutorial.md) package.
+- Finally, update the home page, by adding:
+  - A `Button` to the Register page.
+  - And a `Button` to the Login page.
+
+### :books: **Documentation**:
+- Have a look at the Flowbite Svelte [Button](https://flowbite-svelte.com/docs/components/buttons) and [Input](https://flowbite-svelte.com/docs/components/forms#mainContent) components. 
+- Take also a look at the [svelte-routing](https://github.com/remix-run/react-router/blob/main/docs/start/tutorial.md) package.
 - As well, check out what [binding](https://svelte.dev/docs/element-directives#bind-property) is in Svelte (that might be useful for the inputs  👀)
+
+### ✔️ **Validation**:
+![Task 3 preview homepage](previews/task3-preview-homepage.png)
+*The home page.* 🏠
+
+![Task 3 preview login page](previews/task3-preview-login-page.png)
+*The login page.*
+
+![Task 3 preview register page](previews/task3-preview-register-page.png)
+*The register page.*
 
 ## Step 4 - Testing time 🧪
 
+### :bookmark_tabs: **Description**:
 Great, you now have a nice UI, but how do you make sure it works well without manually testing?
 
 A great tool for front-end testing is [Cypress](https://www.cypress.io/), mainly used for [end-to-end](https://css-tricks.com/front-end-testing-is-for-everyone/#h-end-to-end-e2e-testing) and [component](https://docs.cypress.io/guides/component-testing/overview) tests.
@@ -166,52 +176,60 @@ When you're done, you can use `npm run cypress:run` and admire the passing tests
 
 ## Step 5 - Your first dashboard 📋
 
+### :bookmark_tabs: **Description**:
 Now that you have solid foundations, it's time to go further 🔥
 
 You have a Home page, a Register page and a Login page. What's missing? A Dashboard page!
 
 Let's now play with artists 🚀
 
-> 💡 To see what is an `Artist`, check the [API doc](../resources/README.md)
+> 💡 To see what is an `Artist`, check the [API doc](https://github.com/PoCInnovation/Pool2023/blob/main/Software/day05/resources/README.md)
 
-Create a Dashboard page listing some artists, with the `/dashboard` URL.
+### :pushpin: **Tasks**:
 
-> ⚠️ For now, data is stored within the component. There is no real database and no interaction with the API.
-
-**Requirements:**
-- Update the Register `Button` to redirect to the Dashboard page when clicked.
-- Update the Login `Button` to redirect to the Dashboard page when clicked.
-- The Dashboard page must contains:
+- Create the `src/pages/Dashboard.svelte`. It will conatin the Dashboard page listing some artists, with the `/dashboard` URL.
+  The Dashboard page must contains:
   - A `Navbar` in the top with:
     - A `Link` to the Dashboard page on the left.
     - A `Button` `Add an Artist` on the right, **doing nothing for now**.
   - A `Gallery` listing artists's `card`.
 
-**Constraints:**
-- You must create the file `src/types/Artist.svelte` with the `Artist` type inside. Be smart, take only the needed properties 😎
-- You must create the file `src/pages/Dashboard.svelte`.
-- You must create the file `src/components/Bar/TopBar.tsx` with the top `Navbar` inside.
-- You must create the file `src/components/Button/AddArtistButton.tsx` with the `Add an Artist` `Button` inside.
-- You must create the file `src/components/Card/ArtistCard.tsx` with the artists's `card` inside, displaying every information about an artist except from his `id`.
-  > Try to display the `rating` using 5 stars ⭐
+> ⚠️ For now, data is stored within the component. There is no real database and no interaction with the API.
 
-**Tips:**
-- The Flowbite Svelte [Gallery](https://flowbite-svelte.com/docs/components/gallery#mainContent), [Navbar](https://flowbite-svelte.com/docs/components/navbar), [Link][https://flowbite-svelte.com/docs/typography/link] and [Rating](https://flowbite-svelte.com/docs/components/rating) components will be useful for this dashboard 😉
+- Update the Register `Button` to redirect to the Dashboard page when clicked.
+- Update the Login `Button` to redirect to the Dashboard page when clicked.
+- Add the following files:
+    - `src/types/Artist.svelte` with the `Artist` type inside. Be smart, take only the needed properties 😎
+    - `src/components/Bar/TopBar.tsx` with the top `Navbar` inside.
+    - `src/components/Button/AddArtistButton.tsx` with the `Add an Artist` `Button` inside.
+    - `src/components/Card/ArtistCard.tsx` with the artists's `card` inside, displaying every information about an artist except from his `id`.
+    > Try to display the `rating` using 5 stars ⭐
+
+### :books: **Documentation**:
+- The Flowbite Svelte [Gallery](https://flowbite-svelte.com/docs/components/gallery#mainContent), [Navbar](https://flowbite-svelte.com/docs/components/navbar), [Link](https://flowbite-svelte.com/docs/typography/link]) and [Rating](https://flowbite-svelte.com/docs/components/rating) components will be useful for this dashboard 😉
+
+### ✔️ **Validation**:
+![Task 5 preview Dashboard](previews/task5-preview.png)
+*The Dashboard page.*
 
 ## Step 6 - Become a true Frontend Developer 📈
 
+### :bookmark_tabs: **Description**:
 Now that you can list artists, what if you could add some?
 
 As you can notice, your `Add an artist` button does nothing for now.
 
 Let's add artists in a cool way 😎: when this button is clicked, a `Modal` appears with a form to create an artist.
 
-**Constraints:**
+### :pushpin: **Tasks**:
 - You must create the file `src/components/Modal/AddArtistModal.svelte` with the `Modal` to add an artist inside, called in `src/components/Button/AddArtistButton.svelte`
 
-**Tips:**
+### :books: **Documentation**:
 - Flowbite Svelte has a component perfectly fit for this use case: the [Modal](https://flowbite-svelte.com/docs/components/modal#mainContent) 🔥
 
+### ✔️ **Validation**:
+![Task 6 preview modal add an artist](previews/task6-preview-add-artist.png)
+*Modal to add an artist.*
 
 ***
 ### **⚠️ Important note ⚠️**
