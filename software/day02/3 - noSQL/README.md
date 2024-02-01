@@ -10,6 +10,8 @@
 
 ## Introduction
 
+> 💡 This step is designed exclusively for participants who have successfully completed the SQL workshop earlier today. Please note that it is not necessary to proceed with the NoSQL workshop if you plan to attend the ORM session in the afternoon. The NoSQL workshop is entirely optional, and the ORM workshop that follows is considered more essential for the overall learning progression.
+
 During the [day 01](../../day01), you learned a programming language to 
 develop software. But a software isn't only composed of a hundred thousand
 lines of code, it's common to use external tools to take in charge a specific
@@ -23,6 +25,8 @@ Each time you need a permanent storage, for example, to store users, you will
 need a database.<br>
 It has many usage and ways, the most popular is [SQL database](https://en.wikipedia.org/wiki/SQL) or 
 also called [relational database](https://en.wikipedia.org/wiki/Relational_database). However, today, we will delve into the world of [NoSQL databases](https://en.wikipedia.org/wiki/NoSQL), and more specifically, [document databases](https://en.wikipedia.org/wiki/Document-oriented_database) like [MongoDB](https://en.wikipedia.org/wiki/MongoDB).
+
+Let's dive into the exciting world of NoSQL databases! 🚀
 
 ### Type of database
 
@@ -45,8 +49,7 @@ There are many tools to manage a database. We give you the choice between
 > We recommend DataGrip for its powerful UX and easy adoption 😉
 
 In the folder [resources](./resources), you will find a file named 
-[database.json](./resources/database.json) to generate a new database
-with artists and musics 🎵
+[database.json](./resources/database.json) to get the data that we will generate in ou new database with artists and musics.
 
 Here's a schema of our data:
 ![Artists database](../../../.github/assets/software/software_bdd.png)
@@ -78,13 +81,15 @@ docker run -d \
   mongo:latest
 ```
 
+Go to the [resources](./resources) folder and execute the [setup.sh](./resources/setup.sh) bash script.
+
 ```shell
-npm run start
-## or
-yarn start
+cd resources
+chmod +x setup.sh
+./setup.sh
 ```
 
-> If you can't manage to connect to your database, try changing the POSTGRES_USER parameter to something else and reloading your container using ``docker rm``.
+> If you can't manage to connect to your database, try changing the **MONGO_INITDB_ROOT_USERNAME** parameter to something else and reloading your container using ``docker rm``.
 
 > Don't worry about this command for now, you will learn docker during day04 👀
 
@@ -102,13 +107,14 @@ Here's the information to fill in the form:
 > 💡 You will certainly have to download the MongoDB driver on your first connection.
 
 Below you have an example of configuration:
-![DataGrip configuration](../../../.github/assets/software/software_postresql_connection.png)
+![DataGrip configuration](../../../.github/assets/software/software_mongo_connection.png)
 
 
 After applying the configuration, you should see a new data source in the left panel of DataGrip.
 
 Verify that you have something similar to the example below:
-![DataGrip data source](../../../.github/assets/software/software_postgresql_result.png)
+
+![DataGrip data source](../../../.github/assets/software/software_mongo_result.png)
 
 > You can look a [these steps](https://www.jetbrains.com/help/datagrip/mongodb.html)
 > if you encounter an issue during the configuration.
@@ -118,7 +124,7 @@ Verify that you have something similar to the example below:
 > This is a official IDE by MongoDB for MongoDB
 
 - Go to [MongoDB Compass](https://www.mongodb.com/try/download/compass).
-- Click on `Platform` and select `Ubuntu`.
+- Click on `Platform` and select your distribution (Ubuntu, Fedora, ...).
 - Click on `Download`.
 - Go to your `Downloads/` folder.
 - Execute this command: <br>
@@ -127,7 +133,7 @@ Verify that you have something similar to the example below:
 
 You should get the following result
 
-![sql ide online result](../../../.github/assets/software/software_bdd_compass.png)
+![compass result](../../../.github/assets/software/software_bdd_compass.png)
 
 ## Step 0 - Setup
 ### 📑 Description:
@@ -135,15 +141,11 @@ If you correctly followed the requirements, you should have a database
 ready to use 😍
 
 ### 📌 Tasks:
-You will just need to create a new directory in your pool repository to
-submit your work:
-```shell
-mkdir -p day02
-```
+If your are here it means you finished the SQL part bofore the ORM part starts, 🥳 congratulations.
 
-This day is composed of two parts, so for now you will push your work in the directory `SQL` 😉
+First of all create a noSQL folder in your `day02` directory 
 ```shell
-mkdir -p day02/SQL
+mkdir -p day02/noSQL
 ```
 
 Create a file `queries.md` in which you will write every query you make to keep a trace:
@@ -156,60 +158,61 @@ touch queries.md
 Your database is ready to run your first requests 🥳
 
 The goal of this step is to understand how to read data in a database using
-[SQL](https://en.wikipedia.org/wiki/SQL).
+[mongosh](https://www.mongodb.com/docs/mongodb-shell/).
 
-Let's try to get some information from the table `artists`.
+Let's try to get some information from the collection `artists`.
 
 ### 📌 Tasks:
-Write 3 queries to :
-- Retrieve **all** the information contained in the `artists` table.
-- Retrieve **only** `name` and `genre` from the table `artists`.
+Write 4 queries to :
+- List all the avaiable DB's and switch to your poc-mongo-db
+- Retrieve **all** the information contained in the `artists` collection.
+- Retrieve **only** `name` and `genre` from the collection `artists`.
 - Retrieve the list of all `artists` of `genre` `hip-hop/rap`.
 
 ### 📚 Documentation:
-> See how to [read data in SQL](https://sql.sh/cours/select) or in [PostgreSQL](https://www.postgresql.org/docs/9.5/sql-select.html).
+> See how to [read data with mongosh](https://www.mongodb.com/docs/mongodb-shell/crud/read/).
 
-## Step 2 - Relations
+## Step 2 - Relations in noSQL?
 ### 📑 Description:
-As we said before, a relational database is perfect to handle data with 
-multiple relations between them.
+In a relational database, you store each individual entity in its own table, and link them together through foreign keys. While MongoDB certainly supports references from one document to another, and even multi-document joins, it’s a mistake to use a document database the same way you use a relational one.
 
 ### 📌 Tasks:
-Let's write 3 new queries to link information from tables:
+Let's write 3 new queries to link information from collections:
 - Retrieve `name` from `artists` and `musics`.<br>
-You must specify the name of your result column with `artists_names` and `musics_names`.
+You must specify the name of your result field with `artists_names` and `musics_names`.
 - Retrieve all `artist` who singed in the music `We Are The World`.<br>
 Those artists must be sorted in `descending` order according to their number of fans.
 - Retrieve all the `musics` from `Booba`.<br>
 They must be sorted in `alphabetical` order.
 
 ### 📚 Documentation:
-> See [how to sort data](https://docs.postgresql.fr/9.2/queries-order.html)
-> and [join in SQL](https://sql.sh/cours/jointures).
+> - See [how to sort data](https://www.mongodb.com/docs/manual/reference/operator/aggregation/sort/)
+> and [aggregation stages](https://www.mongodb.com/docs/manual/reference/operator/aggregation-pipeline/) .
+<br>
+> - An article about which method you should use to manage "relations" in a noSQL database, each one has pros and cons, [embed or references](https://www.reddit.com/r/mongodb/comments/nag9yd/references_vs_embedding/)
+
 
 ## Step 3 - CRUD
 ### 📑 Description:
-Yesterday, you programmed the CRUD of a resource, let's learn how to do it using SQL 💪
+Yesterday, you programmed the CRUD of a resource, let's learn how to do it using noSQL 💪
 
 ### 📌 Tasks:
-Write 3 queries to:
+Write queries to:
 - Add a new `artist` with his `id` set to `100`.
 - Delete all musics that have the `Gold` `certification`.
 - Add the music `Take What You Want` to the `artists` you previously created.
 
-> ⚠️ `artists` and `musics` are linked using a relationship table, you
-> will maybe need to do 2 queries to delete records.
-
 ### 📚 Documentation:
-> See how [create](https://www.w3schools.com/sql/sql_insert.asp) or 
-> [delete](https://www.w3schools.com/sql/sql_delete.asp) data in SQL.
+> - See how [create](https://www.mongodb.com/docs/manual/reference/method/db.collection.insert/) or 
+> [delete](https://www.mongodb.com/docs/manual/tutorial/remove-documents/) with in mongosh.
+> -  Did you know that you can [create an use variables](https://copyprogramming.com/howto/how-to-use-variables-in-mongodb-query?utm_content=cmp-true) like in JavaScript?
 
 ## Step 4 - Good counts make good friends
 ### 📑 Description:
-You've learned the basics, let's see more advanced features with pre-processing SQL functions 🧐
+You've learned the basics, let's see more advanced features with mongosh functions.
 
 ### 📚 Documentation
-You will use functions to [count elements](https://www.w3schools.com/sql/sql_count_avg_sum.asp) directly from SQL.
+You will use oprations to [count elements](https://www.mongodb.com/docs/manual/reference/method/db.collection.count/) in your collections.
 
 > 💡 Databases are faster than any programming language (except C) so if you can pre-process your data in your query, do it.
 
@@ -218,37 +221,16 @@ Write 4 new queries to:
 - Count the number of `artists`
 - Count the number of `artists` in each `genre`.
 - Count the number of `musics` sorted by their certification and displayed in ascending order.
-- Count the number of `musics` of each `artists`, sorted by their certification and 
-displayed in ascending order.
-
-> ⚠️ Be sure you never count the same music two time.
-
-> You'll certainly need to [group element in SQL](https://www.w3schools.com/sql/sql_groupby.asp) 😉
-
-## Step 5 - Rap Game
-### 📑 Description:
-You have certainly noticed, there are several kind of musics related to rap: 
-the `rap` and `hip-hop/rap`.
-
-We would like to organize a concert with all the rappers in our database, but
-for that, we need a list of them.
-### 📌 Tasks:
-Write a query that retrieve all the rappers in the database, sorted in 
-descending order by their fans' number.
-### 📚 Documentation:
-> 💡 You'll maybe need to [manipulate string](https://www.tutorialspoint.com/sql/sql-string-functions.htm) 
-> and [cast data](https://www.w3schools.com/sql/func_sqlserver_cast.asp). 
 
 ## To go further
 
-Congratulation, you now have solid knowledge in SQL 🎉
+Congratulation, you now have solid knowledge in SQL and noSQL 🎉
 
 Here are some links for the most courageous among you:
 
-- [Organize your database with schemas](https://www.postgresql.org/docs/14/ddl-schemas.html)
-- [Create your own PostgreSQL function](https://www.postgresql.org/docs/14/xfunc-sql.html)
-- [Automate task with triggers](https://www.postgresql.org/docs/14/trigger-definition.html)
-- [Improve query performance](https://www.postgresql.org/docs/14/performance-tips.html)
+- [Use Indexing for Performance Optimization](https://www.couchbase.com/blog/query-optimization-in-nosql-couchbase-mongodb/)
+- [MongoDB Aggregation Pipeline Queries vs SQL Queries](https://www.mongodb.com/developer/products/mongodb/sql-to-aggregation-pipeline/)
+- [Implement Caching Strategies](https://www.dragonflydb.io/faq/how-to-implement-in-memory-caching-with-mongodb)
 
 <h2 align=center>
 Organization
