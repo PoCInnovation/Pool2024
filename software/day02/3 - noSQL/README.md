@@ -87,6 +87,7 @@ Go to the [resources](./resources) folder and execute the [setup.sh](./resources
 cd resources
 chmod +x setup.sh
 ./setup.sh
+docker exec -it poc-mongo-db mongosh --username admin --password pass
 ```
 
 > If you can't manage to connect to your database, try changing the **MONGO_INITDB_ROOT_USERNAME** parameter to something else and reloading your container using ``docker rm``.
@@ -116,6 +117,10 @@ Verify that you have something similar to the example below:
 
 ![DataGrip data source](../../../.github/assets/software/software_mongo_result.png)
 
+To execute your commands go into the terminal logo and select the `Open Default Console` so you can execute your firsts commands! 😎 As you can see once you write a command you can click on the gree  ⏯️ button.
+
+![DataGript mongosh](../../../.github/assets/software/data-grip-terminal.png)
+
 > You can look a [these steps](https://www.jetbrains.com/help/datagrip/mongodb.html)
 > if you encounter an issue during the configuration.
 
@@ -134,6 +139,12 @@ Verify that you have something similar to the example below:
 You should get the following result
 
 ![compass result](../../../.github/assets/software/software_bdd_compass.png)
+
+Go to `Advanced Connection Options` and you should fill the `username` and the `password` with **admin** and **pass**
+
+![compass auht](../../../.github/assets/software/compass-auth-connection.png)
+
+> ✅ To execute mongoDB commands in compass you can click the the `mongosh icon` on the bottom of the page and you will get a terminal.
 
 ## Step 0 - Setup
 ### 📑 Description:
