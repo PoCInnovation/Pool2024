@@ -1,4 +1,4 @@
-# PoC Software Pool 2023 - Day 02 - ORM
+# PoC Software Pool 2024 - Day 02 - ORM
 
 ✔️ Discover and use an ORM
 
@@ -51,7 +51,7 @@ You will therefore have to create and interact again with a database containing 
 - `Music`: music.
 
 Here's a schema to clear your mind:
-![database schema](../../../../.github/assets/software_bdd_part2.png)
+![database schema](../../../../.github/assets/software/day02/ORM/software_bdd_part2.png)
 
 But unlike this morning, you're not going to use any SQL commands or queries, but learn how to use an ORM
 which makes these SQL requests for you, directly from your Go code.
@@ -544,7 +544,7 @@ In the relational database, there are 3 types of relationships:
 
 Here's a schema to illustrate these relationships:
 
-![relational type](../../../../.github/assets/software_bdd_relational_type.png)
+![relational type](../../../../.github/assets/software/day02/ORM/software_bdd_relational_type.png)
 
 To create these relationships with ENT, you will need to declare [edges](https://entgo.io/docs/schema-edges) that will serve as a link between your models.
 

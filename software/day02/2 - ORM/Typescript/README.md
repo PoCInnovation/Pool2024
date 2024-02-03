@@ -1,4 +1,4 @@
-# PoC Software Pool 2023 - Day 02 - ORM
+# PoC Software Pool 2024 - Day 02 - ORM
 
 **Day purposes**
 
@@ -59,7 +59,7 @@ The purpose is to create and work with a PostgreSQL database that contains these
 
 ### 📚 Documentation:
 Here's a schema to clear your mind:  
-![database schema](../../../../.github/assets/software_bdd_part2.png)
+![database schema](../../../../.github/assets/software/day02/ORM/software_bdd_part2.png)
 
 It's similar to the one from the [SQL subject](../../1%20-%20SQL), but this time
 you will create it yourself 👍
@@ -362,7 +362,7 @@ by multiple `Artist`.
 
 Here's a schema to illustrate these relationships:
 
-![relational type](../../../../.github/assets/software_bdd_relational_type.png)
+![relational type](../../../../.github/assets/software/day02/ORM/software_bdd_relational_type.png)
 
 ### 📚 Documentation:
 > 💡 Click [here](https://www.prisma.io/docs/concepts/components/prisma-schema/relations)

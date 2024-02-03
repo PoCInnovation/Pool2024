@@ -1,4 +1,4 @@
-# PoC Software Pool 2023 - Day 02 - SQL
+# PoC Software Pool 2024 - Day 02 - SQL
 
 **Day purposes**
 
@@ -10,8 +10,7 @@
 
 ## Introduction
 
-During the [day 01](../../day01), you learned a programming language to 
-develop software. But a software isn't only composed of a hundred thousand
+During the [day 01](../../day01), you learned a programming language to develop software. But a software isn't only composed of a hundred thousand
 lines of code, it's common to use external tools to take in charge a specific
 task. 😉<br>
 For example, you can use [Prometheus](https://prometheus.io)/[Grafana](https://grafana.com) to monitor your app, [Kafka](https://kafka.apache.org) as a queue or a [database](https://en.wikipedia.org/wiki/Database) to store huge amount of data...
@@ -49,7 +48,7 @@ In the folder [resources](./resources), you will find a file named
 with artists and musics 🎵
 
 Here's a schema of our data:
-![Artists database](../../../.github/assets/software_bdd.png)
+![Artists database](../../../.github/assets/software/day02/SQL/software_bdd.png)
 
 In relational database, data is stored into a [table](https://www.postgresql.org/docs/9.2/ddl-basics.html)
 where each information is a [column](https://www.postgresql.org/docs/8.0/ddl.html).
@@ -90,13 +89,13 @@ Here's the information to fill in the form:
 > 💡 You will certainly have to download the PostgreSQL driver on your first connection.
 
 Below you have an example of configuration:
-![DataGrip configuration](../../../.github/assets/software_postresql_connection.png)
+![DataGrip configuration](../../../.github/assets/software/day02/SQL/software_postresql_connection.png)
 
 
 After applying the configuration, you should see a new data source in the left panel of DataGrip.
 
 Verify that you have something similar to the example below:
-![DataGrip data source](../../../.github/assets/software_postgresql_result.png)
+![DataGrip data source](../../../.github/assets/software/day02/SQL/software_postgresql_result.png)
 
 > You can look a [these steps](https://www.jetbrains.com/help/datagrip/postgresql.html)
 > if you encounter an issue during the configuration.
@@ -116,7 +115,7 @@ Verify that you have something similar to the example below:
 
 You should get the following result
 
-![sql ide online result](../../../.github/assets/software_sql_online.png)
+![sql ide online result](../../../.github/assets/software/day02/SQL/software_sql_online.png)
 
 ## Step 0 - Setup
 ### 📑 Description:

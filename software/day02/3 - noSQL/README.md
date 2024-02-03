@@ -1,4 +1,4 @@
-# PoC Software Pool 2023 - Day 02 - noSQL
+# PoC Software Pool 2024 - Day 02 - noSQL
 
 **Day purposes**
 
@@ -52,7 +52,7 @@ In the folder [resources](./resources), you will find a file named
 [database.json](./resources/database.json) to get the data that we will generate in ou new database with artists and musics.
 
 Here's a schema of our data:
-![Artists database](../../../.github/assets/software/software_bdd.png)
+![Artists database](../../../.github/assets/software/day02/noSQL/software_bdd.png)
 
 In document databases, data is stored into a [document](https://www.mongodb.com/docs/manual/core/document/) where each information is stored in an object as a [field-and-value](https://www.mongodb.com/docs/manual/core/document/).
 
@@ -108,18 +108,18 @@ Here's the information to fill in the form:
 > 💡 You will certainly have to download the MongoDB driver on your first connection.
 
 Below you have an example of configuration:
-![DataGrip configuration](../../../.github/assets/software/software_mongo_connection.png)
+![DataGrip configuration](../../../.github/assets/software/day02/noSQL/software_mongo_connection.png)
 
 
 After applying the configuration, you should see a new data source in the left panel of DataGrip.
 
 Verify that you have something similar to the example below:
 
-![DataGrip data source](../../../.github/assets/software/software_mongo_result.png)
+![DataGrip data source](../../../.github/assets/software/day02/noSQL/software_mongo_result.png)
 
 To execute your commands go into the terminal logo and select the `Open Default Console` so you can execute your firsts commands! 😎 As you can see once you write a command you can click on the gree  ⏯️ button.
 
-![DataGript mongosh](../../../.github/assets/software/data-grip-terminal.png)
+![DataGript mongosh](../../../.github/assets/software/day02/noSQL/data-grip-terminal.png)
 
 > You can look a [these steps](https://www.jetbrains.com/help/datagrip/mongodb.html)
 > if you encounter an issue during the configuration.
@@ -138,11 +138,11 @@ To execute your commands go into the terminal logo and select the `Open Default 
 
 You should get the following result
 
-![compass result](../../../.github/assets/software/software_bdd_compass.png)
+![compass result](../../../.github/assets/software/day02/noSQL/software_bdd_compass.png)
 
 Go to `Advanced Connection Options` and you should fill the `username` and the `password` with **admin** and **pass**
 
-![compass auht](../../../.github/assets/software/compass-auth-connection.png)
+![compass auht](../../../.github/assets/software/day02/noSQL/compass-auth-connection.png)
 
 > ✅ To execute mongoDB commands in compass you can click the the `mongosh icon` on the bottom of the page and you will get a terminal.
 

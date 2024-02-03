@@ -1,6 +1,6 @@
-# PoC Software Pool 2023 - Day 01 - Go
+# PoC Software Pool 2024 - Day 01 - Go
 
-Welcome to the Software pool 2023! 🚀
+Welcome to the Software pool 2024! 🚀
 
 During this week, you will learn the base of the modern web programming, core
 concept of frontend, backend, data storage... with a piece of devops.
@@ -109,7 +109,7 @@ package main
 import "fmt"
 
 func main() {
-  fmt.Println("You are ready to start the 2023 PoC software pool!")
+  fmt.Println("You are ready to start the 2024 PoC software pool!")
 }
 ```
 
@@ -127,7 +127,7 @@ go build SoftwareGoDay1
 ./SoftwareGoDay1
 
 # You should have the following output
-> You are ready to start the 2023 PoC software pool!
+> You are ready to start the 2024 PoC software pool!
 ```
 
 Before going further, do the [Go Tour](https://go.dev/tour/basics/1) and read
@@ -364,7 +364,7 @@ code logic is split into smaller parts to easily maintain and scale a project.
 We will now adapt MVC to our need, don't worry if we do not strictly follow the architecture.
 
 Here's a schema of your architecture:
-![Artists Book architecture](../../../.github/assets/software_mvc.png)
+![Artists Book architecture](../../../.github/assets/software/day01/software_mvc.png)
 
 
 ### 📌 Tasks:

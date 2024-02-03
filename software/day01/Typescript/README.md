@@ -1,6 +1,6 @@
-# PoC Software Pool 2023 - Day 01 - Typescript
+# PoC Software Pool 2024 - Day 01 - Typescript
 
-Welcome to the Software pool 2023! 🚀
+Welcome to the Software pool 2024! 🚀
 
 During this week, you will learn the base of the modern web programming, core
 concept of frontend, backend, data storage... with a piece of devops.
@@ -625,7 +625,7 @@ code logic is split into smaller parts to easily maintain and scale a project.
 We will now adapt MVC to our need, don't worry if we do not strictly follow the architecture.
 
 Here's a schema of your architecture:
-![Artists Book architecture](../../../.github/assets/software_mvc.png)
+![Artists Book architecture](../../../.github/assets/software/day01/software_mvc.png)
 
 ### 📌 Tasks:
 Let's code it step by step 😄
