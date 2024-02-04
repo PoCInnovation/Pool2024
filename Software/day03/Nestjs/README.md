@@ -199,6 +199,69 @@ In the **backend application** development there are **different types of tests*
 
 - [NestJS unit testing](https://docs.nestjs.com/fundamentals/testing#unit-testing)
 
+
+## Bonus - Logger middleware with Winston 👀
+
+You have a clean architecture, but something is missing...<br>
+You don't know what happens in your API, which endpoints are hit and if
+everything works.
+
+Seeing the whole web traffic will help you to detect issues in your API, but also attacks from others.
+
+To do so, you will set up a [logger](https://www.securitymetrics.com/blog/importance-log-management).
+It's an important piece of your API, during development but also in production.
+
+Let's use [winston](https://github.com/winstonjs/winston). It's a powerful
+logger easy to configure and use.
+
+Let's install it:
+```shell
+npm install winston
+```
+
+### Winston! Stand up!
+
+Create a logger service in your project.
+
+Inside it, export a [winston](https://github.com/winstonjs/winston) logger
+with the following properties:
+- An output format like this: `"[{timestamp}] [{severity}]": {message}`
+- Write logs to the standard output and the file `/var/log/api.log`
+- [Colorize the logs](https://github.com/winstonjs/winston#colorizing-standard-logging-levels) written in standard output
+
+Winston works with a [transport system](https://github.com/winstonjs/winston/blob/master/docs/transports.md),
+this way you can use multiple transport at the same time.<br>
+It also sorts logs following a [severity system](https://github.com/winstonjs/winston/tree/master#logging-levels).
+
+> A good practice consist of saving errors logs in a file `/var/log/error.log`
+> to easily find issues later 💯
+
+> 💡 For a better code readability, you can create an [Enum](https://www.typescriptlang.org/docs/handbook/enums.html)
+> to define `severity` stages.
+
+### Winston! Line up!
+
+One last thing remains to have a perfect API: a logger to display all
+inbound requests and responses.
+
+Create a logging middleware and implement the logic. Use NestJS's MiddlewareConsumer to apply your middleware to the desired routes.
+
+This middleware should:
+- Display inbound requests with a message like this:
+`request [{request_id}] on {method} [{path}] from ({user_ip})`
+- Display responses with a message similar to this one:
+`request [{request_id}] response in {elapsed_time}ms with status {response status code}`
+
+You can create unique identifiers with the dependency [uuid](https://www.npmjs.com/package/uuid).
+
+Apply your middleware to your API and verify that everything works by sending requests 🚀
+
+<br><br>
+</details>
+
+
+
+
 <h2 align=center>
 Organization
 </h2>
