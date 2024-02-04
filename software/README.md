@@ -1,4 +1,4 @@
-# 👋 Welcome to the PoC Software Pool 2023!
+# 👋 Welcome to the PoC Software Pool 2024!
 
 During one week, you will be able to discover the different facets of software development: from database management to devops, through a tour of existing technologies.
 
@@ -19,22 +19,18 @@ This choice will organize your week. You will learn something new in the chosen 
 - [Typescript](./day01/Typescript/)
 - [Go](./day01/Go/)
 
-**Talk:**
-- State of Software & Open Source in 2023 - [Flavian GONTIER](https://www.linkedin.com/in/flavian-gontier-44999a133) <!-- markdown-link-check-disable-line -->
-
 
 ## ℹ️ Day 2 - Database
 
-You will discover the relational databases through the management of a PostgreSQL database in two ways: by hand with SQL queries and with an Object Relational Database (ORM).
+You will discover the relational databases through the management of a PostgreSQL database in two ways: by hand with SQL queries and with an Object Relational Database (ORM). <br>
+There is an optional part about noSQL databases in the morning for those who finished the SQL before the afternoon starts. We will dive into mongosh (MongoDB shell) and what is a document data base.
 
 - [SQL](./day02/1%20-%20SQL/)
+- [noSQL](./day02/3%20-%20noSQL/)
 
 ORM:
 - [Typescript](./day02/2%20-%20ORM/Typescript/)
 - [Go](./day02/2%20-%20ORM/Go/)
-
-**Talk:**
-- SQL vs NoSQL: how to choose wisely? - [Tanguy MOULLEC](https://www.linkedin.com/in/tanguy-moullec) & [Alexis TACNET](https://www.linkedin.com/in/alexis-tacnet-aa0478109/) <!-- markdown-link-check-disable-line -->
 
 
 ## 💻: Day 3 - API REST
@@ -43,6 +39,9 @@ You will discover core concepts of the web and the basics of HTTP servers by bui
 
 - [Typescript](./day03/Typescript/)
 - [Go](./day03/Go/)
+
+**Talk:**
+- API REST and security. A crucial combination for robust systems. <br> - [Bastien SANDER](https://www.linkedin.com/in/bastien-sander-%F0%9F%8C%8D-35098354/)<!-- markdown-link-check-disable-line -->
 
 
 ## 👮‍♂️ Day 4 - Docker & Deployment
@@ -69,6 +68,10 @@ If you've already used React and Flutter, you can even choose Angular to dive fu
 - [React](./day05/React/)
 - [Flutter](./day05/Flutter/)
 - [Angular](./day05/Angular/)
+- [Svelte](./day05/Svelte/)
+
+**Talk:**
+- Monitoring and data analytics. Do users use your website as expected? <br> - [Nils Cambreleng](https://www.linkedin.com/in/nilscam/) <!-- markdown-link-check-disable-line -->
 
 
 ## ⏰ Rush
@@ -78,11 +81,13 @@ By groups of 3 to 5, you will have to create a clone of Airbnb, Deezer, Linkedin
 
 ## Authors
 
-| [<img src="https://github.com/RezaRahemtola.png?size=85" width=85><br><sub>Reza Rahemtola</sub>](https://github.com/RezaRahemtola)
+
+
+| [<img src="https://github.com/Molaryy.png?size=85" width=85><br><sub>Mohammed JBILOU</sub>](https://github.com/Molaryy)
 | :---: |
 
-| [<img src="https://github.com/barbo69.png?size=85" width=85><br><sub>Baptiste BARBOTIN</sub>](https://github.com/barbo69) | [<img src="https://github.com/tonida-rodda.png?size=85" width=85><br><sub>Toni DA RODDA</sub>](https://github.com/tonida-rodda) | [<img src="https://github.com/AlexandreCollin.png?size=85" width=85><br><sub>Alexandre COLLIN-BÉTHEUIL</sub>](https://github.com/AlexandreCollin) | [<img src="https://github.com/jeanbaptistedebize.png?size=85" width=85><br><sub>Jean-Baptiste DEBIZE</sub>](https://github.com/jeanbaptistedebize)
-| :---: | :---: | :---: | :---: |
+| [<img src="https://github.com/adamdeziri.png?size=85" width=85><br><sub>Adam DEZIRI</sub>](https://github.com/adamdeziri) | [<img src="https://github.com/sephorah.png?size=85" width=85><br><sub>Séphorah ANIAMBOSSOU</sub>](https://github.com/sephorah) | [<img src="https://github.com/YlanGarnier.png?size=85" width=85><br><sub>Ylan GARNIER</sub>](https://github.com/YlanGarnier)
+| :---: | :---: | :---: | 
 
 <h2 align=center>
 Organization
