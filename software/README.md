@@ -32,9 +32,6 @@ ORM:
 - [Typescript](./day02/2%20-%20ORM/Typescript/)
 - [Go](./day02/2%20-%20ORM/Go/)
 
-**Talk:**
-
-
 
 ## 💻: Day 3 - API REST
 
