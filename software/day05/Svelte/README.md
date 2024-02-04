@@ -326,7 +326,8 @@ Now that you know how to call an API from a User Interface, it's time to have a 
   - The user must be authenticated on the Dashboard page. If not, redirect him to the Home page.
   - The user must be notified with the appropriate message on artist creation.
 - Don't forget to structure your code.
-  You already have all you need, but you can ask the staff if you struggle 😄
+  
+You already have all you need, but you can ask the staff if you struggle 😄
 
 ## Step 10 - What about musics? 🎶
 
@@ -345,7 +346,8 @@ Let's create an Artist page listing all of his musics. 🎵
   - `src/components/Card/MusicCard.svelte` with the musics's `card` inside, displaying every information about a music except from its `id`.
   - `src/components/Button/AddMusicButton.svelte` with the `Add a Music` `button` inside.
   - `src/components/Modal/AddMusicModal.svelte` with the `modal` to add a music inside, called in `src/components/Button/AddMusicButton.svelte`.
-  This is not the time to optimize your number of requests to the API. Keep it logical.
+  
+This is not the time to optimize your number of requests to the API. Keep it logical.
 
 ## Bonus
 
