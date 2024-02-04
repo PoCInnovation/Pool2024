@@ -1,4 +1,4 @@
-# PoC Software Pool 2023 - Day 05 - Svelte
+# PoC Software Pool 2023 Day 05 - Svelte
 
 **Day purposes**
 
@@ -258,6 +258,116 @@ To set this up, here is a little challenge you can take: all your logic, keep it
 
 If you want to go further in frontend development, follow this principle as much as you can 😉
 ***
+
+## Step 7 - Implement stores 🏪
+
+### :bookmark_tabs: **Description**:
+However, when you want to add an artist, you'll find out that the Dashboard isn't updated. It's because the array where you store your `Artists` is shared between multiple components. In order to fix this, let's implement stores! 😄 
+
+A store is an object with a subscribe method, that allows interested parties (such as components) to be notified whenever the store value changes. Thanks to stores, you can share data between different components without passing parameters to them.
+
+Here, we want to create a store for the `Artists` list of the `Dashboard`, so that whenever we add a new `Artist`, the Dashboard updates!
+
+### :pushpin: **Tasks**:
+- Create the `src/stores/Artists.ts` file, where you'll define the `artists` store.
+- Add the `susbscribe` method in `src/pages/Dashboard.ts`, in order to update the list of `Artists` whenever `artists`'s value is updated.
+- Change the way you're updating the list of `Artists` in `src/components/Modal/AddArtistModal.svelte`.
+
+### :books: **Documentation**:
+- Learn about stores [here](https://svelte.dev/docs/svelte-store) 👍
+
+### ✔️ **Validation**:
+![Step 7 preview](previews/task7-preview.png)
+*The Dashboard page after adding a new artist.*
+
+## Step 8 - Your first API call from a UI 💯
+
+### :bookmark_tabs: **Description**:
+Now that you have built your User Interface, it's time to call the [API](../resources/README.md) and interact with real data 🚀
+> Please take a moment to setup this.\
+> Feel free to play with it with a tool like [Postman](https://www.postman.com/) or [Insomnia](https://www.insomnia.rest/).
+
+Let's call the API when a user registers 🧔‍♂️
+
+### :pushpin: **Tasks**:
+- Create functions that will call the API, inside the folder `src/services`. In your Svelte components, you will call these functions. Be smart, you're free to organize this folder as you want.
+  - These functions must:
+      - Notify the user with the appropriate message if the register action succeeds or fails.
+      - Make the Register button not clickable if the credentials are invalid.
+      - Redirect the user to the Dashboard page, on success.
+- You must have an [env variable](https://vitejs.dev/guide/env-and-mode) `VITE_APP_BACKEND_URL`.
+- You must get the `VITE_APP_BACKEND_URL` inside the file `src/config/services.ts`, and only here.
+
+### :books: **Documentation**:
+- Have a look at the [axios](https://www.npmjs.com/package/axios) package.
+- Another step, another Flowbite UI component! This time, look at the [toast](https://flowbite-svelte.com/docs/components/toast) component. (And its associated [icons](https://flowbite-svelte.com/docs/extend/icon)).
+- Take a look at the [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage), this is where you can keep the `accessToken`.
+
+***
+### **⚠️ Important note ⚠️**
+
+You will store the given `accessToken` inside the `localStorage`.
+
+Note that this is a **bad idea**.
+> Please refer to [the Security Bonus](#security-issue) to understand why.
+
+We ask you to do it this way because it's important to be aware of this.
+***
+
+## Step 9 - Time to play with real data 🚀
+
+### :bookmark_tabs: **Description**:
+Now that you know how to call an API from a User Interface, it's time to have a complete interaction with it!
+
+### :pushpin: **Tasks**:
+- Update your code to follow the next requirements:
+  - On successful login, the user must be redirected to the Dashboard page.
+  - The user must be notified with the appropriate message on login.
+  - The user must be authenticated on the Dashboard page. If not, redirect him to the Home page.
+  - The user must be notified with the appropriate message on artist creation.
+- Don't forget to structure your code.
+  
+You already have all you need, but you can ask the staff if you struggle 😄
+
+## Step 10 - What about musics? 🎶
+
+### :bookmark_tabs: **Description**:
+Well, we have artists. What about musics?
+
+Let's create an Artist page listing all of his musics. 🎵
+
+### :pushpin: **Tasks**:
+- Create the `src/pages/ArtistPage.svelte` file, with the Artist page. It must contain:
+  - The same top `navbar` as the Dashboard page.
+  - The photo / name / rating / nationality / music gender of the artist, displayed in a nice way.
+  - An `Add a music` `button` opening a `modal` to add a music when clicked.
+  - A `grid` listing his music's `card`.
+- Create the following files:
+  - `src/components/Card/MusicCard.svelte` with the musics's `card` inside, displaying every information about a music except from its `id`.
+  - `src/components/Button/AddMusicButton.svelte` with the `Add a Music` `button` inside.
+  - `src/components/Modal/AddMusicModal.svelte` with the `modal` to add a music inside, called in `src/components/Button/AddMusicButton.svelte`.
+  
+This is not the time to optimize your number of requests to the API. Keep it logical.
+
+## Bonus
+
+Congratulations for completing this day, you're now able to create a beautiful frontend for your own project 🤩
+
+Here are some bonuses for you if you still have time:
+
+### SvelteKit
+
+Take a look at [SvelteKit](https://kit.svelte.dev/), an app framework built on top of Svelte, which allows developers to build full-stack applications with Svelte.
+
+### Dark & Light Mode
+
+Implement a Dark and Light Mode thanks to [Flowbite](https://flowbite-svelte.com/docs/components/darkmode) 🕶️
+
+### Security Issue
+
+As stated earlier, storing a JWT inside the `localStorage` is a bad idea. Here is [how to solve this problem](https://www.codeheroes.fr/2020/06/20/securiser-une-api-rest-3-3-gestion-du-jwt-cote-client/) 😉
+
+Your turn!
 
 <h2 align=center>
 Organization
