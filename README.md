@@ -6,7 +6,7 @@ Every year, we organize innovation weeks in a "pool" format to introduce people 
 
 Here are our fields:
 - 🕸️ [Peer-To-Peer](./P2P/)
-- 💻 [Software](./software/)
+- 💻 [Software](./Software/)
 
 We put all our heart to work, we hope you will enjoy it and that it will be useful to you.
 

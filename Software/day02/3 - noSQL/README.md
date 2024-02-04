@@ -142,7 +142,7 @@ You should get the following result
 
 Go to `Advanced Connection Options` and you should fill the `username` and the `password` with **admin** and **pass**
 
-![compass auht](../../../.github/assets/software/day02/noSQL/compass-auth-connection.png)
+![compass auth](../../../.github/assets/software/day02/noSQL/compass-auth-connection.png)
 
 > ✅ To execute mongoDB commands in compass you can click the the `mongosh icon` on the bottom of the page and you will get a terminal.
 
@@ -152,7 +152,7 @@ If you correctly followed the requirements, you should have a database
 ready to use 😍
 
 ### 📌 Tasks:
-If your are here it means you finished the SQL part bofore the ORM part starts, 🥳 congratulations.
+If your are here it means you finished the SQL part before the ORM part starts, 🥳 congratulations.
 
 First of all create a noSQL folder in your `day02` directory 
 ```shell
@@ -223,7 +223,7 @@ Write queries to:
 You've learned the basics, let's see more advanced features with mongosh functions.
 
 ### 📚 Documentation
-You will use oprations to [count elements](https://www.mongodb.com/docs/manual/reference/method/db.collection.count/) in your collections.
+You will use operations to [count elements](https://www.mongodb.com/docs/manual/reference/method/db.collection.count/) in your collections.
 
 > 💡 Databases are faster than any programming language (except C) so if you can pre-process your data in your query, do it.
 
