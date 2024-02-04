@@ -30,7 +30,7 @@ and standard. The most popular is [REST](https://en.wikipedia.org/wiki/Represent
 
 Here's a simple schema of an API and a client:
 
-![server client relation](../../../.github/assets/software_api_client_server.png)
+![server client relation](../../.github/assets/software_api_client_server.png)
 
 This subject will give you all the knowledge required to create a secure REST API.
 
