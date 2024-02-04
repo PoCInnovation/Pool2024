@@ -53,7 +53,7 @@ There are two rules to follow:
 Here's an example:
 <div align="center">
 
-![react architecture example](../../../.github/assets/react-architecture-example.png)
+![react architecture example](../../../.github/assets/software/day05/react/react-architecture-example.png)
 
 </div>
 

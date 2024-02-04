@@ -30,7 +30,7 @@ ng generate c my-first-comp
 ```
 
 This will create a folder named `my-first-comp`, and as you can see in the screenshot below you will found 4 files inside it:\
-![First component output](../../../.github/assets/software/angular/first-component.png)
+![First component output](../../../.github/assets/software/day05/angular/first-component.png)
 
 - `.component.ts` - This file contains the TypeScript class for the component, including properties and methods. It also includes any imports and decorators needed for the component to function properly.
 
@@ -145,7 +145,7 @@ const routes: Routes = [] // all your endpoints will be stored in this array, ch
 ```
 
 which should give the following hierarchy:
-![Router](../../../.github/assets/software/angular/router.png)
+![Router](../../../.github/assets/software/day05/angular/router.png)
 
 
 ### 📚 **Documentation**
