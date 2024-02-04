@@ -32,9 +32,6 @@ ORM:
 - [Typescript](./day02/2%20-%20ORM/Typescript/)
 - [Go](./day02/2%20-%20ORM/Go/)
 
-**Talk:**
-
-
 
 ## 💻: Day 3 - API REST
 
@@ -44,7 +41,7 @@ You will discover core concepts of the web and the basics of HTTP servers by bui
 - [Go](./day03/Go/)
 
 **Talk:**
-- API REST and security. A crucial combination for robust systems. <br> - [Bastien SANDER](https://www.linkedin.com/in/tanguy-moullec)<!-- markdown-link-check-disable-line -->
+- API REST and security. A crucial combination for robust systems. <br> - [Bastien SANDER](https://www.linkedin.com/in/bastien-sander-%F0%9F%8C%8D-35098354/)<!-- markdown-link-check-disable-line -->
 
 
 ## 👮‍♂️ Day 4 - Docker & Deployment
