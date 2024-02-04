@@ -1,4 +1,4 @@
-# PoC Software Pool 2023 - Day 05 - Svelte
+# [PoC Software Pool 2023 Day 05] - [Svelte]
 
 **Day purposes**
 
@@ -61,7 +61,7 @@ npm run dev
 
 If you get a page with the Vite and the Svelte logos, then you can continue 🚀
 
-## Step 1 - Lay the foundations
+## Step 1 - [Lay the foundations]
 
 Before starting the tasks, let's prepare your project.
 
@@ -75,7 +75,7 @@ You'll build your UI with [Flowbite Svelte](https://flowbite-svelte.com/), which
 
 Now that the foundations are laid for your project, it's time to dive into frontend development 🏊
 
-## Step 2 - Your first component 🚀
+## Step 2 - [Your first component 🚀]
 
 ### :bookmark_tabs: **Description**:
 
@@ -101,7 +101,7 @@ Well done! You have created your first Svelte Component 🥳
 
 > 💡 A **great idea** is to create a folder `src/components` to store reusable components.
 
-## Step 3 - Your first routes 🛤️
+## Step 3 - [Your first routes 🛤️]
 
 ### :bookmark_tabs: **Description**:
 Now that you have your Home page, it's time to have Register and Login pages reachable at the `/register` and `/login` URLs 😉
@@ -142,7 +142,7 @@ It must contain:
 ![Task 3 preview register page](previews/task3-preview-register-page.png)
 *The register page.*
 
-## Step 4 - Testing time 🧪
+## Step 4 - [Testing time 🧪]
 
 ### :bookmark_tabs: **Description**:
 Great, you now have a nice UI, but how do you make sure it works well without manually testing?
@@ -174,7 +174,7 @@ When you're done, you can use `npm run cypress:run` and admire the passing tests
 
 > During the next steps, feel free to add tests for the new components and pages you create 😉
 
-## Step 5 - Your first dashboard 📋
+## Step 5 - [Your first dashboard 📋]
 
 ### :bookmark_tabs: **Description**:
 Now that you have solid foundations, it's time to go further 🔥
@@ -212,7 +212,7 @@ Let's now play with artists 🚀
 ![Task 5 preview Dashboard](previews/task5-preview.png)
 *The Dashboard page.*
 
-## Step 6 - Become a true Frontend Developer 📈
+## Step 6 - [Become a true Frontend Developer 📈]
 
 ### :bookmark_tabs: **Description**:
 Now that you can list artists, what if you could add some?
@@ -259,7 +259,7 @@ To set this up, here is a little challenge you can take: all your logic, keep it
 If you want to go further in frontend development, follow this principle as much as you can 😉
 ***
 
-## Step 7 - Your first API call from a UI 💯
+## Step 7 - [Your first API call from a UI 💯]
 
 Now that you have built your User Interface, it's time to call the [API](../resources/README.md) and interact with real data 🚀
 > Please take a moment to setup this.\
@@ -293,7 +293,7 @@ Note that this is a **bad idea**.
 We ask you to do it this way because it's important to be aware of this.
 ***
 
-## Step 8 - Time to play with real data 🚀
+## Step 8 - [Time to play with real data 🚀]
 
 Now that you know how to call an API from a User Interface, it's time to have a complete interaction with it!
 
@@ -309,7 +309,7 @@ Now that you know how to call an API from a User Interface, it's time to have a 
 **Tips:**
 - You already have all you need, but you can ask the staff if you struggle 😄
 
-## Step 9 - What about musics? 🎶
+## Step 9 - [What about musics? 🎶]
 
 Well, we have artists. What about musics?
 
@@ -331,7 +331,7 @@ Create an Artist page listing all of his musics.
 **Tips:**
 - This is not the time to optimize your number of requests to the API. Keep it logical.
 
-### Svelte Stores
+## Svelte Stores
 
 What if you could share data between different components without passing parameters to them?
 
