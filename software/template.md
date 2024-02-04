@@ -1,7 +1,0 @@
-### 📑 Description:
-
-### 📌 Tasks:
-
-### 📚 Documentation:
-
-### ✔️ Validation:
