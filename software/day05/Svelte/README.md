@@ -1,4 +1,4 @@
-# [PoC Software Pool 2023 Day 05] - [Svelte]
+# PoC Software Pool 2023 Day 05 - Svelte
 
 **Day purposes**
 
@@ -61,7 +61,7 @@ npm run dev
 
 If you get a page with the Vite and the Svelte logos, then you can continue 🚀
 
-## Step 1 - [Lay the foundations]
+## Step 1 - Lay the foundations
 
 Before starting the tasks, let's prepare your project.
 
@@ -75,7 +75,7 @@ You'll build your UI with [Flowbite Svelte](https://flowbite-svelte.com/), which
 
 Now that the foundations are laid for your project, it's time to dive into frontend development 🏊
 
-## Step 2 - [Your first component 🚀]
+## Step 2 - Your first component 🚀
 
 ### :bookmark_tabs: **Description**:
 
@@ -101,7 +101,7 @@ Well done! You have created your first Svelte Component 🥳
 
 > 💡 A **great idea** is to create a folder `src/components` to store reusable components.
 
-## Step 3 - [Your first routes 🛤️]
+## Step 3 - Your first routes 🛤️
 
 ### :bookmark_tabs: **Description**:
 Now that you have your Home page, it's time to have Register and Login pages reachable at the `/register` and `/login` URLs 😉
@@ -142,7 +142,7 @@ It must contain:
 ![Task 3 preview register page](previews/task3-preview-register-page.png)
 *The register page.*
 
-## Step 4 - [Testing time 🧪]
+## Step 4 - Testing time 🧪
 
 ### :bookmark_tabs: **Description**:
 Great, you now have a nice UI, but how do you make sure it works well without manually testing?
@@ -174,7 +174,7 @@ When you're done, you can use `npm run cypress:run` and admire the passing tests
 
 > During the next steps, feel free to add tests for the new components and pages you create 😉
 
-## Step 5 - [Your first dashboard 📋]
+## Step 5 - Your first dashboard 📋
 
 ### :bookmark_tabs: **Description**:
 Now that you have solid foundations, it's time to go further 🔥
@@ -212,7 +212,7 @@ Let's now play with artists 🚀
 ![Task 5 preview Dashboard](previews/task5-preview.png)
 *The Dashboard page.*
 
-## Step 6 - [Become a true Frontend Developer 📈]
+## Step 6 - Become a true Frontend Developer 📈
 
 ### :bookmark_tabs: **Description**:
 Now that you can list artists, what if you could add some?
@@ -259,27 +259,48 @@ To set this up, here is a little challenge you can take: all your logic, keep it
 If you want to go further in frontend development, follow this principle as much as you can 😉
 ***
 
-## Step 7 - [Your first API call from a UI 💯]
+## Step 7 - Implement stores 🏪
 
+### :bookmark_tabs: **Description**:
+However, when you want to add an artist, you'll find out that the Dashboard isn't updated. It's because the array where you store your `Artists` is shared between multiple components. In order to fix this, let's implement stores! 😄 
+
+A store is an object with a subscribe method, that allows interested parties (such as components) to be notified whenever the store value changes. Thanks to stores, you can share data between different components without passing parameters to them.
+
+Here, we want to create a store for the `Artists` list of the `Dashboard`, so that whenever we add a new `Artist`, the Dashboard updates!
+
+### :pushpin: **Tasks**:
+- Create the `src/stores/Artists.ts` file, where you'll define the `artists` store.
+- Add the `susbscribe` method in `src/pages/Dashboard.ts`, in order to update the list of `Artists` whenever `artists`'s value is updated.
+- Change the way you're updating the list of `Artists` in `src/components/Modal/AddArtistModal.svelte`.
+
+### :books: **Documentation**:
+- Learn about stores [here](https://svelte.dev/docs/svelte-store) 👍
+
+### ✔️ **Validation**:
+![Step 7 preview](previews/task7-preview.png)
+*The Dashboard page after adding a new artist.*
+
+## Step 8 - Your first API call from a UI 💯
+
+### :bookmark_tabs: **Description**:
 Now that you have built your User Interface, it's time to call the [API](../resources/README.md) and interact with real data 🚀
 > Please take a moment to setup this.\
 > Feel free to play with it with a tool like [Postman](https://www.postman.com/) or [Insomnia](https://www.insomnia.rest/).
 
 Let's call the API when a user registers 🧔‍♂️
 
-**Requirements:**
-- The user must be notified with the appropriate message if the register action succeeds or fails.
-- The Register button cannot be clickable if the credentials are invalid.
-- On success, redirect the user to the Dashboard page.
-
-**Constraints :**
+### :pushpin: **Tasks**:
+- Create functions that will call the API, inside the folder `src/services`. In your Svelte components, you will call these functions. Be smart, you're free to organize this folder as you want.
+  - These functions must:
+      - Notify the user with the appropriate message if the register action succeeds or fails.
+      - Make the Register button not clickable if the credentials are invalid.
+      - Redirect the user to the Dashboard page, on success.
 - You must have an [env variable](https://vitejs.dev/guide/env-and-mode) `VITE_APP_BACKEND_URL`.
 - You must get the `VITE_APP_BACKEND_URL` inside the file `src/config/services.ts`, and only here.
-- You must create the folder `src/services` and keep the functions calling the API inside it. In your Svelte components, you will call these functions. Be smart, you're free to organize this folder as you want.
 
-**Tips:**
+### :books: **Documentation**:
 - Have a look at the [axios](https://www.npmjs.com/package/axios) package.
-- Another step, another Flowbite UI component! This time, look at the [toast](https://flowbite-svelte.com/docs/components/toast) component. ( And its associated [icons](https://flowbite-svelte.com/docs/extend/icon) ).
+- Another step, another Flowbite UI component! This time, look at the [toast](https://flowbite-svelte.com/docs/components/toast) component. (And its associated [icons](https://flowbite-svelte.com/docs/extend/icon)).
 - Take a look at the [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage), this is where you can keep the `accessToken`.
 
 ***
@@ -293,57 +314,48 @@ Note that this is a **bad idea**.
 We ask you to do it this way because it's important to be aware of this.
 ***
 
-## Step 8 - [Time to play with real data 🚀]
+## Step 9 - Time to play with real data 🚀
 
+### :bookmark_tabs: **Description**:
 Now that you know how to call an API from a User Interface, it's time to have a complete interaction with it!
 
-**Requirements:**
-- On successful login, redirect to the Dashboard page.
-- The user must be notified with the appropriate message on login.
-- The user must be authenticated on the Dashboard page. If not, redirect him to the Home page.
-- The user must be notified with the appropriate message on artist creation.
-
-**Constraints :**
-- Follow the previous constraints and structure your code 😉
-
-**Tips:**
+### :pushpin: **Tasks**:
+- Update your code to follow the next requirements:
+  - On successful login, the user must be redirected to the Dashboard page.
+  - The user must be notified with the appropriate message on login.
+  - The user must be authenticated on the Dashboard page. If not, redirect him to the Home page.
+  - The user must be notified with the appropriate message on artist creation.
+- Don't forget to structure your code.
 - You already have all you need, but you can ask the staff if you struggle 😄
 
-## Step 9 - [What about musics? 🎶]
+## Step 10 - What about musics? 🎶
 
+### :bookmark_tabs: **Description**:
 Well, we have artists. What about musics?
 
-Create an Artist page listing all of his musics.
+Let's create an Artist page listing all of his musics. 🎵
 
-**Requirements:**
-- When an artist is created, redirect the user to this artist's page.
-- The Artist page must contains:
+### :pushpin: **Tasks**:
+- Create the `src/pages/ArtistPage.svelte` file, with the Artist page. It must contain:
   - The same top `navbar` as the Dashboard page.
   - The photo / name / rating / nationality / music gender of the artist, displayed in a nice way.
   - An `Add a music` `button` opening a `modal` to add a music when clicked.
   - A `grid` listing his music's `card`.
-
-**Constraints:**
-- You must create the file `src/components/Card/MusicCard.tsx` with the musics's `card` inside, displaying every information about a music except from its `id`.
-- You must create the file `src/components/Button/AddMusicButton.tsx` with the `Add a Music` `button` inside.
-- You must create the file `src/components/Modal/AddMusicModal.tsx` with the `modal` to add a music inside, called in `src/components/Button/AddMusicButton.tsx`.
-
-**Tips:**
-- This is not the time to optimize your number of requests to the API. Keep it logical.
-
-## Svelte Stores
-
-What if you could share data between different components without passing parameters to them?
-
-Well it's possible, it's called [Svelte Stores](https://svelte.dev/docs/svelte-store).
-
-Try to use it.
+- Create the following files:
+  - `src/components/Card/MusicCard.svelte` with the musics's `card` inside, displaying every information about a music except from its `id`.
+  - `src/components/Button/AddMusicButton.svelte` with the `Add a Music` `button` inside.
+  - `src/components/Modal/AddMusicModal.svelte` with the `modal` to add a music inside, called in `src/components/Button/AddMusicButton.svelte`.
+  - This is not the time to optimize your number of requests to the API. Keep it logical.
 
 ## Bonus
 
 Congratulations for completing this day, you're now able to create a beautiful frontend for your own project 🤩
 
 Here are some bonuses for you if you still have time:
+
+### SvelteKit
+
+Take a look at [SvelteKit](https://kit.svelte.dev/), an app framework built on top of Svelte, which allows developers to build full-stack applications with Svelte.
 
 ### Dark & Light Mode
 
