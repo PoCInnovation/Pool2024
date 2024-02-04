@@ -1,6 +1,6 @@
-# PoC Software Pool 2023 - Day 01 - Typescript
+# PoC Software Pool 2024 - Day 01 - Typescript
 
-Welcome to the Software pool 2023! 🚀
+Welcome to the Software pool 2024! 🚀
 
 During this week, you will learn the base of the modern web programming, core
 concept of frontend, backend, data storage... with a piece of devops.

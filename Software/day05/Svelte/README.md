@@ -1,4 +1,4 @@
-# PoC Software Pool 2023 Day 05 - Svelte
+# PoC Software Pool 2024 Day 05 - Svelte
 
 **Day purposes**
 
@@ -183,7 +183,7 @@ You have a Home page, a Register page and a Login page. What's missing? A Dashbo
 
 Let's now play with artists 🚀
 
-> 💡 To see what is an `Artist`, check the [API doc](https://github.com/PoCInnovation/Pool2023/blob/main/Software/day05/resources/README.md)
+> 💡 To see what is an `Artist`, check the [API doc](https://github.com/PoCInnovation/Pool2024/blob/main/Software/day05/resources/README.md)
 
 ### :pushpin: **Tasks**:
 
