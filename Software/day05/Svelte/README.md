@@ -1,4 +1,4 @@
-# PoC Software Pool 2024 Day 05 - Svelte
+# PoC Software Pool 2023 Day 05 - Svelte
 
 **Day purposes**
 
@@ -34,19 +34,21 @@ However, unlike [React](https://en.reactjs.org/), Svelte doesn't rely on a virtu
 
 ## Step 0 - Setup
 
-In your pool repository, create a new directory for the `day05`:
+### :pushpin: **Tasks**:
+
+- In your pool repository, create a new directory for the `day05`:
 
 ```sh
 mkdir -p day05
 ```
 
-Then, create a new Svelte project with Typescript:
+- Then, create a new Svelte project with Typescript:
 
 ```shell
 npm create vite@latest artists-book -- --template svelte-ts
 ```
 
-To verify that everything is ok, run the following commands:
+- To verify that everything is ok, run the following commands:
 
 ```shell
 # Move to your project
@@ -70,6 +72,7 @@ Install all the packages we're going to use for this day:
 ```sh
 npm i svelte-routing cypress flowbite flowbite-svelte
 ```
+### :bookmark_tabs: **Description**:
 
 You'll build your UI with [Flowbite Svelte](https://flowbite-svelte.com/), which is a component library for Svelte.
 
@@ -151,17 +154,19 @@ A great tool for front-end testing is [Cypress](https://www.cypress.io/), mainly
 
 To win time, we already created some tests for you, you'll just need to adapt them to your application 😄
 
-Since we've installed Cypress earlier, you can just add the necessary scripts in the `package.json`:
+### :pushpin: **Tasks**:
+
+- Since we've installed Cypress earlier, you can just add the necessary scripts in the `package.json`:
 ```json
 "cypress:run": "cypress run",
 "cypress:open": "cypress open",
 ```
 > You can run the tests directly in the CLI or open an UI to do so 😉
 
-Once this is done, [extract the given files](). You should have a `cypress` folder at the root of your project with the test files located in `cypress/e2e`, and a `cypress.config.ts` file also at the root.
+- Once this is done, [extract the given files](). You should have a `cypress` folder at the root of your project with the test files located in `cypress/e2e`, and a `cypress.config.ts` file also at the root.
 > 💡 You'll notice the `cypress/videos` and `cypress/screenshots` folders, when you run the tests cypress will fill these directories with content to help you debug your tests if they fail. You can add them to your `.gitignore` to avoid committing them. 
 
-Lastly, you will need to add some [`id`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id?retiredLocale=id) to the components of your UI. They will be useful to find content of your UI, especially here for the cypress tests. 
+- Lastly, you will need to add some [`id`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id?retiredLocale=id) to the components of your UI. They will be useful to find content of your UI, especially here for the cypress tests. 
 
 For example in `home.cy.ts`, you have this test for the title where we find the UI content based on the `app-title` id:
 ```ts
@@ -183,7 +188,7 @@ You have a Home page, a Register page and a Login page. What's missing? A Dashbo
 
 Let's now play with artists 🚀
 
-> 💡 To see what is an `Artist`, check the [API doc](https://github.com/PoCInnovation/Pool2024/blob/main/Software/day05/resources/README.md)
+> 💡 To see what is an `Artist`, check the [API doc](https://github.com/PoCInnovation/Pool2023/blob/main/Software/day05/resources/README.md)
 
 ### :pushpin: **Tasks**:
 
@@ -301,7 +306,7 @@ Let's call the API when a user registers 🧔‍♂️
 ### :books: **Documentation**:
 - Have a look at the [axios](https://www.npmjs.com/package/axios) package.
 - Another step, another Flowbite UI component! This time, look at the [toast](https://flowbite-svelte.com/docs/components/toast) component. (And its associated [icons](https://flowbite-svelte.com/docs/extend/icon)).
-- Take a look at the [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage), this is where you can keep the `accessToken`.
+- Take a look at the [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage), this is where you can keep the `accessToken`. Try to mix it up with Svelte stores to have more control over this !
 
 ***
 ### **⚠️ Important note ⚠️**
