@@ -84,11 +84,8 @@ mkdir -p day05
 Then, create a new React project with Typescript:
 
 ```shell
-npx create-react-app artists-book --template typescript
+npm create vite@latest artists-book -- --template react-ts
 ```
-
-> Don't worry if you see vulnerabilities after this command, it's a false positive.<br>
-> If you are curious about it [take a look at this issue](https://github.com/facebook/create-react-app/issues/11174) 😉
 
 To verify that everything is ok, run the following commands:
 
@@ -96,8 +93,11 @@ To verify that everything is ok, run the following commands:
 # Move to your project
 cd artists-book
 
+# Install dependencies
+npm install
+
 # Start the server
-npm start
+npm run dev
 ```
 
 If you get a page with the React logo spinning, then you can continue 🚀
@@ -297,7 +297,7 @@ To test that everything went well, run the following commands:
 npm run lint
 
 # Start the server
-npm start
+npm run dev
 ```
 
 You can continue if they all succeed!
@@ -530,8 +530,8 @@ Let's call the API when a user registers 🧔‍♂️
 - On success, redirect the user to the Dashboard page.
 
 **Constraints :**
-- You must have an [env variable](https://create-react-app.dev/docs/adding-custom-environment-variables/) `REACT_APP_BACKEND_URL`.
-- You must get the `REACT_APP_BACKEND_URL` inside the file `src/config/services.ts`, and only here.
+- You must have an [env variable](https://create-react-app.dev/docs/adding-custom-environment-variables/) `VITE_APP_BACKEND_URL`.
+- You must get the `VITE_APP_BACKEND_URL` inside the file `src/config/services.ts`, and only here.
 - You must create the folder `src/services` and keep the functions calling the API inside it. In your React components, you will call these functions. Be smart, you're free to organize this folder as you want.
 
 **Tips:**
