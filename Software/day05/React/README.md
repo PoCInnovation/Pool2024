@@ -125,16 +125,21 @@ Remove some files to have the following hierarchy:
 ```sh
   ├──node_modules       # External modules required
   │   └──{...}
-  ├──public             # Static files - https://create-react-app.dev/docs/using-the-public-folder/
-  │   ├──index.html
-  │   └──robots.txt     # Prevent crawl up - https://www.geeksforgeeks.org/robots-txt-file/
+  ├──public             # Static files - https://vitejs.dev/guide/assets.html#the-public-directory
+  │   └──{...}
   ├──src                # The folder where you will code
   │   ├──App.tsx
-  │   └──index.tsx
+  |   ├──App.css
+  |   ├──main.tsx
+  |   ├──index.css
+  |   ├──vite-env.d.ts
+  ├──index.html
   ├──.gitignore         # Tells git to ignore some files
   ├──package-lock.json  # Dependencies manager
   ├──package.json       # Package manager
+  ├──vite.config.json   # Vite configuration file
   ├──README.md          # Don't hesitate to read it! It contains useful commands
+  ├──tsconfig.node.json # Typescript configuration file
   └──tsconfig.json      # TypeScript configuration file
 ```
 > It's ok if some errors appear, it will be fixed 😃
@@ -151,7 +156,7 @@ As always, install the necessary dependencies:
 npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion
 ```
 
-- Update `src/index.tsx` to wrap your app with a ChakraProvider, allowing us to customize behavior around the whole app:
+- Update `src/main.tsx` to wrap your app with a ChakraProvider, allowing us to customize behavior around the whole app:
 ```tsx
 import React from 'react';
 import ReactDOM from 'react-dom/client';
@@ -170,7 +175,7 @@ root.render(
 	</React.StrictMode>,
 );
 ```
-> You can take a look at the Chakra UI [tutorial](https://chakra-ui.com/getting-started/cra-guide#manual-installation) to setup `create-react-app` projects.
+> You can take a look at the Chakra UI [tutorial](https://chakra-ui.com/getting-started/vite-guide) to setup `vite` projects.
 
 Now let's create [a custom Chakra theme](https://chakra-ui.com/docs/theming/customize-theme) to extend it with our own preferences 🎱:
 
