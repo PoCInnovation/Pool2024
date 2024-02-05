@@ -132,7 +132,7 @@ It must contain:
 
 ### :books: **Documentation**:
 - Have a look at the Flowbite Svelte [Button](https://flowbite-svelte.com/docs/components/buttons) and [Input](https://flowbite-svelte.com/docs/components/forms#mainContent) components. 
-- Take also a look at the [svelte-routing](https://github.com/remix-run/react-router/blob/main/docs/start/tutorial.md) package.
+- Take also a look at the [svelte-routing](https://github.com/EmilTholin/svelte-routing) package.
 - As well, check out what [binding](https://svelte.dev/docs/element-directives#bind-property) is in Svelte (that might be useful for the inputs  👀)
 
 ### ✔️ **Validation**:
@@ -204,10 +204,10 @@ Let's now play with artists 🚀
 - Update the Register `Button` to redirect to the Dashboard page when clicked.
 - Update the Login `Button` to redirect to the Dashboard page when clicked.
 - Add the following files:
-    - `src/types/Artist.svelte` with the `Artist` type inside. Be smart, take only the needed properties 😎
-    - `src/components/Bar/TopBar.tsx` with the top `Navbar` inside.
-    - `src/components/Button/AddArtistButton.tsx` with the `Add an Artist` `Button` inside.
-    - `src/components/Card/ArtistCard.tsx` with the artists's `card` inside, displaying every information about an artist except from his `id`.
+    - `src/types/artist.ts` with the `Artist` type inside. Be smart, take only the needed properties 😎
+    - `src/components/Bar/TopBar.svelte` with the top `Navbar` inside.
+    - `src/components/Button/AddArtistButton.svelte` with the `Add an Artist` `Button` inside.
+    - `src/components/Card/ArtistCard.svelte` with the artists's `card` inside, displaying every information about an artist except from his `id`.
     > Try to display the `rating` using 5 stars ⭐
 
 ### :books: **Documentation**:
@@ -347,6 +347,7 @@ Let's create an Artist page listing all of his musics. 🎵
   - The photo / name / rating / nationality / music gender of the artist, displayed in a nice way.
   - An `Add a music` `button` opening a `modal` to add a music when clicked.
   - A `grid` listing his music's `card`.
+  - When an artist is created, redirect the user to this artist's page.
 - Create the following files:
   - `src/components/Card/MusicCard.svelte` with the musics's `card` inside, displaying every information about a music except from its `id`.
   - `src/components/Button/AddMusicButton.svelte` with the `Add a Music` `button` inside.
