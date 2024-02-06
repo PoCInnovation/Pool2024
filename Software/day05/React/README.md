@@ -75,32 +75,34 @@ As a consequence, by using React you give your users ***a more fluid experience*
 
 ## Step 0 - Setup
 
-In your pool repository, create a new directory for the `day05`:
+### :pushpin: **Tasks**:
+
+- In your pool repository, create a new directory for the `day05`:
 
 ```sh
 mkdir -p day05
 ```
 
-Then, create a new React project with Typescript:
+- Then, create a new React project with Typescript:
 
 ```shell
-npx create-react-app artists-book --template typescript
+npm create vite@latest artists-book -- --template react-ts
 ```
 
-> Don't worry if you see vulnerabilities after this command, it's a false positive.<br>
-> If you are curious about it [take a look at this issue](https://github.com/facebook/create-react-app/issues/11174) 😉
-
-To verify that everything is ok, run the following commands:
+- To verify that everything is ok, run the following commands:
 
 ```shell
 # Move to your project
 cd artists-book
 
+# Install dependencies
+npm install
+
 # Start the server
-npm start
+npm run dev
 ```
 
-If you get a page with the React logo spinning, then you can continue 🚀
+If you get the vite+react home page with a react logo spinning, then you can continue 🚀
 
 ***
 ### **⚠️ Important note ⚠️**
@@ -123,16 +125,21 @@ Remove some files to have the following hierarchy:
 ```sh
   ├──node_modules       # External modules required
   │   └──{...}
-  ├──public             # Static files - https://create-react-app.dev/docs/using-the-public-folder/
-  │   ├──index.html
-  │   └──robots.txt     # Prevent crawl up - https://www.geeksforgeeks.org/robots-txt-file/
+  ├──public             # Static files - https://vitejs.dev/guide/assets.html#the-public-directory
+  │   └──{...}
   ├──src                # The folder where you will code
   │   ├──App.tsx
-  │   └──index.tsx
+  |   ├──App.css
+  |   ├──main.tsx
+  |   ├──index.css
+  |   ├──vite-env.d.ts
+  ├──index.html
   ├──.gitignore         # Tells git to ignore some files
   ├──package-lock.json  # Dependencies manager
   ├──package.json       # Package manager
+  ├──vite.config.json   # Vite configuration file
   ├──README.md          # Don't hesitate to read it! It contains useful commands
+  ├──tsconfig.node.json # Typescript configuration file
   └──tsconfig.json      # TypeScript configuration file
 ```
 > It's ok if some errors appear, it will be fixed 😃
@@ -149,7 +156,7 @@ As always, install the necessary dependencies:
 npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion
 ```
 
-- Update `src/index.tsx` to wrap your app with a ChakraProvider, allowing us to customize behavior around the whole app:
+- Update `src/main.tsx` to wrap your app with a ChakraProvider, allowing us to customize behavior around the whole app:
 ```tsx
 import React from 'react';
 import ReactDOM from 'react-dom/client';
@@ -168,7 +175,7 @@ root.render(
 	</React.StrictMode>,
 );
 ```
-> You can take a look at the Chakra UI [tutorial](https://chakra-ui.com/getting-started/cra-guide#manual-installation) to setup `create-react-app` projects.
+> You can take a look at the Chakra UI [tutorial](https://chakra-ui.com/getting-started/vite-guide) to setup `vite` projects.
 
 Now let's create [a custom Chakra theme](https://chakra-ui.com/docs/theming/customize-theme) to extend it with our own preferences 🎱:
 
@@ -297,7 +304,7 @@ To test that everything went well, run the following commands:
 npm run lint
 
 # Start the server
-npm start
+npm run dev
 ```
 
 You can continue if they all succeed!
@@ -321,20 +328,22 @@ For all the following steps, you will have three sections:
 
 ## Step 2 - Your first component 🚀
 
+### :bookmark_tabs: **Description**:
+
 Let's start by creating the Home page 😄
 
-**Requirements:**
-- The Home page must contain:
+### :pushpin: **Tasks**:
+
+- Create the file `src/pages/Home.tsx` with a React Component representing your Home page inside.
+  The Home page must contain:
   - a title `Artists Book`
   - a subtitle `Manage your favorite artists`
-
-**Constraints:**
-- Create the file `src/pages/Home.tsx` with a React Component representing your Home page inside.
 - Update the file `src/app/App.tsx` to call this component.
 
 > Make sure you understood everything from the foundations.
 
-> Have a look at the Chakra UI [Text](https://chakra-ui.com/docs/typography/text) and [`Heading`](https://chakra-ui.com/docs/components/heading) components 😉
+### :books: **Documentation**:
+- Have a look at the Chakra UI [Text](https://chakra-ui.com/docs/typography/text) and [`Heading`](https://chakra-ui.com/docs/components/heading) components 😉
 
 Well done! You have created your first React Component 🥳
 
@@ -354,31 +363,31 @@ From now on, you are free to add any element you want in your UI as long as you 
 
 ## Step 3 - Your first routes 🛤️
 
+### :bookmark_tabs: **Description**:
 Now that you have your Home page, it's time to have Register and Login pages reachable at the `/register` and `/login` URLs.
 
-**Requirements:**
-- The Home page must contain:
-  - A `link` to the Register page.
-  - A `link` to the Login page.
-- The Register page must contain:
-  - An `input` to enter an `email`.
-  - An `input` to enter a `password`.
-  - An `input` to enter the `confirmed password`.
+### :pushpin: **Tasks**:
+- Create the `src/pages/Register.tsx` file, which will contain the Register page.
+It must contain:
+  - An `Input` to enter an `email`.
+  - An `Input` to enter a `password`.
+  - An `Input` to enter the `confirmed password`.
     > 💡 Text for the password inputs mut be replace by dots
-  - A `button` that when clicked, log the values of the email, the password and the confirmed password.
-  - A `link` to the Login page.
-- The Login page must contain:
-  - An `input` to enter an `email`.
-  - An `input` to enter a `password` with text replaced by dots again.
-  - A `button` that when clicked, log the values of the email and the password.
-  - A `link` to the Register page.
+  - A `Button` that when clicked, log the values of the email, the password and the confirmed password.
 
-**Constraints:**
-- You must create the file `src/pages/Register.tsx`.
-- You must create the file `src/pages/Login.tsx`.
-- You must create the file `src/app/Routes.tsx` with a React Component containing the Routes inside, called in `src/app/App.tsx`.
+- Create the `src/pages/Login.tsx` file, which will contain the Login page.
+  - An `Input` to enter an `email`.
+  - An `Input` to enter a `password` with text replaced by dots again.
+  - A `Button` that when clicked, log the values of the email and the password.
+  - A `Button` to the Register page.
 
-**Tips:**
+- Create the `src/app/Routes.tsx` file, with a Svelte component containing the Routes inside, called in `src/App.svelte`.
+
+- Finally, update the home page, by adding:
+  - A `Button` to the Register page.
+  - And a `Button` to the Login page.
+
+### :books: **Documentation**:
 - Have a look at the Chakra UI [Input](https://chakra-ui.com/docs/form/input), [Link](https://chakra-ui.com/docs/navigation/link) and [Button](https://chakra-ui.com/docs/form/button) components.
 - You should have a look at the [react-router-dom](https://github.com/remix-run/react-router/blob/main/docs/start/tutorial.md) package.
 - Check the React [State Hook](https://en.reactjs.org/docs/hooks-state.html) 👀
@@ -386,46 +395,49 @@ Now that you have your Home page, it's time to have Register and Login pages rea
 
 ## Step 4 - What if you change the screen size? 📱
 
+### :bookmark_tabs: **Description**:
 Now that you have several pages, its time to make sure that they are responsive on different screen sizes 🙂
 
 To do so, open the console and play with the screen width and height (CTRL + SHIFT + M while inside the console 😉)
 
 If some elements are not responsive, fix it!
 
-**Requirements:**
+### :pushpin: **Tasks**:
 - Check:
   - The arrangement of the elements.
   - The spaces between elements.
   - The text size (especially for titles and subtitles)
   - ...
 
-**Tips:**
+### :books: **Documentation**:
 - Here is [how to do with Chakra UI](https://chakra-ui.com/docs/features/responsive-styles). As you can see, the setup has already been done!
 
 ## Step 5 - Testing time 🧪
 
+### :bookmark_tabs: **Description**:
 Great, you now have a good looking responsive UI, but how do you make sure it works well without manually testing?
 
 A great tool for front-end testing is [Cypress](https://www.cypress.io/), mainly used for [end-to-end](https://css-tricks.com/front-end-testing-is-for-everyone/#h-end-to-end-e2e-testing) and [component](https://docs.cypress.io/guides/component-testing/overview) tests.
 
 To win time, we already created some tests for you, you'll just need to adapt them to your application 😄
 
-First, let's install the necessary dependencies:
+### :pushpin: **Tasks**:
+- First, let's install the necessary dependencies:
 ```shell
 npm i -D cypress @types/jest
 ```
 
-Then you have to add the necessary scripts in the `package.json`:
+- Then you have to add the necessary scripts in the `package.json`:
 ```json
 "cypress:run": "cypress run",
 "cypress:open": "cypress open",
 ```
 > You can run the tests directly in the CLI or open an UI to do so 😉
 
-Once this is done, [extract the given files](./src/react-tests.zip). You should have a `cypress` folder at the root of your project with the test files located in `cypress/e2e`, and a `cypress.config.ts` file also at the root.
+- Once this is done, [extract the given files](./src/react-tests.zip). You should have a `cypress` folder at the root of your project with the test files located in `cypress/e2e`, and a `cypress.config.ts` file also at the root.
 > 💡 You'll notice the `cypress/videos` and `cypress/screenshots` folders, when you run the tests cypress will fill these directories with content to help you debug your tests if they fail. You can add them to your `.gitignore` to avoid committing them. 
 
-Lastly, you will need to add some [`id`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id?retiredLocale=id) to the components of your UI. They will be useful to find content of your UI, especially here for the cypress tests. 
+- Lastly, you will need to add some [`id`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id?retiredLocale=id) to the components of your UI. They will be useful to find content of your UI, especially here for the cypress tests. 
 
 For example in `home.cy.ts`, you have this test for the title where we find the UI content based on the `app-title` id:
 ```ts
@@ -440,6 +452,7 @@ When you're done, you can use `npm run cypress:run` and admire the passing tests
 
 ## Step 6 - Your first dashboard 📋
 
+### :bookmark_tabs: **Description**:
 Now that you have solid foundations, it's time to go further 🔥
 
 You have a Home page, a Register page and a Login page. What's missing? A Dashboard page!
@@ -448,43 +461,45 @@ Let's now play with artists 🚀
 
 > 💡 To see what is an `Artist`, check the [API doc](../resources/README.md)
 
+### :pushpin: **Tasks**:
 Create a Dashboard page listing some artists, with the `/dashboard` URL.
+
+- Create the `src/pages/Dashboard.tsx`. It will conatin the Dashboard page listing some artists, with the `/dashboard` URL.
+  The Dashboard page must contains:
+  - A `Navbar` in the top with:
+    - A `Link` to the Dashboard page on the left.
+    - A `Button` `Add an Artist` on the right, **doing nothing for now**.
+  - A `Gallery` listing artists's `card`.
 
 > ⚠️ For now, data is stored with a React `useState` hook. There is no real database and no interaction with the API.
 
-**Requirements:**
 - Update the Register `button` to redirect to the Dashboard page when clicked.
 - Update the Login `button` to redirect to the Dashboard page when clicked.
-- The Dashboard page must contains:
-  - A `navbar` in the top with:
-    - A `link` to the Dashboard page on the left.
-    - A `button` `Add an Artist` on the right, **doing nothing for now**.
-  - A `grid` listing artists's `card`.
 
-**Constraints:**
-- You must create the file `src/types/artist.ts` with the `Artist` type inside. Be smart, take only the needed properties 😎
-- You must create the file `src/pages/Dashboard.tsx`.
-- You must create the file `src/components/Bar/TopBar.tsx` with the top `navbar` inside.
-- You must create the file `src/components/Button/AddArtistButton.tsx` with the `Add an Artist` `button` inside.
-- You must create the file `src/components/Card/ArtistCard.tsx` with the artists's `card` inside, displaying every information about an artist except from his `id`.
-  > Try to display the `rating` using 5 stars ⭐
+- Add the following files:
+    - `src/types/artist.ts` with the `Artist` type inside. Be smart, take only the needed properties 😎
+    - `src/components/Bar/TopBar.tsx` with the top `Navbar` inside.
+    - `src/components/Button/AddArtistButton.tsx` with the `Add an Artist` `Button` inside.
+    - `src/components/Card/ArtistCard.tsx` with the artists's `card` inside, displaying every information about an artist except from his `id`.
+    > Try to display the `rating` using 5 stars ⭐
 
-**Tips:**
+### :books: **Documentation**:
 - The Chakra UI [Grid](https://chakra-ui.com/docs/layout/grid), [Navbar](https://chakra-templates.dev/navigation/navbar) and [Cards](https://chakra-templates.dev/components/cards) components will be useful for this dashboard 😉
 > ⚠️ Be careful with the Chakra UI templates, it's just to give you an idea of what you can do. ***Do not copy-paste code.***
 
 ## Step 7 - Become a true Frontend Developer 📈
 
+### :bookmark_tabs: **Description**:
 Now that you can list artists, what if you could add some?
 
 As you can notice, your `Add an artist` button does nothing for now.
 
 Let's add artists in a cool way 😎: when this button is clicked, a `modal` appears with a form to create an artist.
 
-**Constraints:**
+### :pushpin: **Tasks**:
 - You must create the file `src/components/Modal/AddArtistModal.tsx` with the `modal` to add an artist inside, called in `src/components/Button/AddArtistButton.tsx`.
 
-**Tips:**
+### :books: **Documentation**:
 - Chakra UI has a component perfectly fit for this use case: the [Modal](https://chakra-ui.com/docs/overlay/modal) 🔥
 
 
@@ -518,23 +533,24 @@ If you want to go further in frontend development, follow this principle as much
 
 ## Step 8 - Your first API call from a UI 💯
 
+### :bookmark_tabs: **Description**:
 Now that you have built your User Interface, it's time to call the [API](../resources/README.md) and interact with real data 🚀
 > Please take a moment to setup this.\
-> Feel free to play with it with a tool like [Postman](https://www.postman.com/).
+> Feel free to play with it with a tool like [Postman](https://www.postman.com/) or [Insomnia](https://www.insomnia.rest/).
 
 Let's call the API when a user registers 🧔‍♂️
 
-**Requirements:**
-- The user must be notified with the appropriate message if the register action succeeds or fails.
-- The Register button cannot be clickable if the credentials are invalid.
-- On success, redirect the user to the Dashboard page.
+### :pushpin: **Tasks**:
+- Create functions that will call the API, inside the folder `src/services`. In your React components, you will call these functions. Be smart, you're free to organize this folder as you want.
+- Ajust your `Register` components to call thoses functions
+  - The implementation must:
+    - Notify the user with the appropriate message if the register action succeeds or fails.
+    - Make the Register button not clickable if the credentials are invalid.
+    - Redirect the user to the Dashboard page, on success.
+- You must have an [env variable](https://vitejs.dev/guide/env-and-mode) `VITE_APP_BACKEND_URL`.
+- You must get the `VITE_APP_BACKEND_URL` inside the file `src/config/services.ts`, and only here.
 
-**Constraints :**
-- You must have an [env variable](https://create-react-app.dev/docs/adding-custom-environment-variables/) `REACT_APP_BACKEND_URL`.
-- You must get the `REACT_APP_BACKEND_URL` inside the file `src/config/services.ts`, and only here.
-- You must create the folder `src/services` and keep the functions calling the API inside it. In your React components, you will call these functions. Be smart, you're free to organize this folder as you want.
-
-**Tips:**
+### :books: **Documentation**:
 - Have a look at the [axios](https://www.npmjs.com/package/axios) and [env-var](https://www.npmjs.com/package/env-var) packages.
 - Another step, another Chakra UI component! This time, look at the [toast](https://chakra-ui.com/docs/feedback/toast) component.
 - Take a look at the [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage), this is where you can keep the `accessToken`.
@@ -552,41 +568,39 @@ We ask you to do it this way because it's important to be aware of this.
 
 ## Step 9 - Time to play with real data 🚀
 
+### :bookmark_tabs: **Description**:
 Now that you know how to call an API from a User Interface, it's time to have a complete interaction with it!
 
-**Requirements:**
-- On successful login, redirect to the Dashboard page.
-- The user must be notified with the appropriate message on login.
-- The user must be authenticated on the Dashboard page. If not, redirect him to the Home page.
-- The user must be notified with the appropriate message on artist creation.
+### :pushpin: **Tasks**:
+- Update your code to follow the next requirements:
+  - On successful login, the user must be redirected to the Dashboard page.
+  - The user must be notified with the appropriate message on login.
+  - The user must be authenticated on the Dashboard page. If not, redirect him to the Home page.
+  - The user must be notified with the appropriate message on artist creation.
+- Don't forget to structure your code.
 
-**Constraints :**
-- Follow the previous constraints and structure your code 😉
-
-**Tips:**
-- You already have all you need, but you can ask the staff if you struggle 😄
+You already have all you need, but you can ask the staff if you struggle 😄
 
 ## Step 10 - What about musics? 🎶
 
+### :bookmark_tabs: **Description**:
 Well, we have artists. What about musics?
 
-Create an Artist page listing all of his musics.
+Let's create an Artist page listing all of his musics. 🎵
 
-**Requirements:**
-- When an artist is created, redirect the user to this artist's page.
-- The Artist page must contains:
+### :pushpin: **Tasks**:
+- Create the `src/pages/ArtistPage.tsx` file, with the Artist page. It must contain:
   - The same top `navbar` as the Dashboard page.
   - The photo / name / rating / nationality / music gender of the artist, displayed in a nice way.
   - An `Add a music` `button` opening a `modal` to add a music when clicked.
   - A `grid` listing his music's `card`.
+  - When an artist is created, redirect the user to this artist's page.
+- Create the following files:
+  - `src/components/Card/MusicCard.tsx` with the musics's `card` inside, displaying every information about a music except from its `id`.
+  - `src/components/Button/AddMusicButton.tsx` with the `Add a Music` `button` inside.
+  - `src/components/Modal/AddMusicModal.tsx` with the `modal` to add a music inside, called in `src/components/Button/AddMusicButton.svelte`.
 
-**Constraints:**
-- You must create the file `src/components/Card/MusicCard.tsx` with the musics's `card` inside, displaying every information about a music except from its `id`.
-- You must create the file `src/components/Button/AddMusicButton.tsx` with the `Add a Music` `button` inside.
-- You must create the file `src/components/Modal/AddMusicModal.tsx` with the `modal` to add a music inside, called in `src/components/Button/AddMusicButton.tsx`.
-
-**Tips:**
-- This is not the time to optimize your number of requests to the API. Keep it logical.
+This is not the time to optimize your number of requests to the API. Keep it logical.
 
 ## Bonus
 
