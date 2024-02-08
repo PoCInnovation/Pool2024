@@ -32,7 +32,7 @@ build to release and monitoring.
 
 Here's a simple schema of the devops workflow:
 
-![devops workflow](../../.github/assets/software_devops_workflow.jpeg)
+![devops workflow](../../../.github/assets/software/day04/software_devops_workflow.jpeg)
 
 This subject is focused on docker and containers building & management. It's
 one the most important part of DevOps.
@@ -98,7 +98,7 @@ This [application](./resources) is composed of:
 
 Here's a simple schema of the application architecture:
 
-![front-back-db](../../.github/assets/software-micro-services.png)
+![front-back-db](../../../.github/assets/software/day04/software-micro-services.png)
 
 ### Lay the foundations
 
