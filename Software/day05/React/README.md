@@ -381,7 +381,7 @@ It must contain:
   - A `Button` that when clicked, log the values of the email and the password.
   - A `Button` to the Register page.
 
-- Create the `src/app/Routes.tsx` file, with a Svelte component containing the Routes inside, called in `src/App.svelte`.
+- Create the `src/app/Routes.tsx` file, with a React component containing the Routes inside, called in `src/App.tsx`.
 
 - Finally, update the home page, by adding:
   - A `Button` to the Register page.
@@ -598,7 +598,7 @@ Let's create an Artist page listing all of his musics. 🎵
 - Create the following files:
   - `src/components/Card/MusicCard.tsx` with the musics's `card` inside, displaying every information about a music except from its `id`.
   - `src/components/Button/AddMusicButton.tsx` with the `Add a Music` `button` inside.
-  - `src/components/Modal/AddMusicModal.tsx` with the `modal` to add a music inside, called in `src/components/Button/AddMusicButton.svelte`.
+  - `src/components/Modal/AddMusicModal.tsx` with the `modal` to add a music inside, called in `src/components/Button/AddMusicButton.tsx`.
 
 This is not the time to optimize your number of requests to the API. Keep it logical.
 
