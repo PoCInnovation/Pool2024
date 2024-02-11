@@ -12,6 +12,7 @@
 ---
 
 **The finish line is near !**
+
 On today's menu, we'll explore the fields of natural language processing and graph neural networks.
 
 > Here's a list of resources that we believe can be useful to follow along (and that we've ourselves used to learn these topics before being able to write the subjects):
