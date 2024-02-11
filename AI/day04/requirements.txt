@@ -1,5 +1,0 @@
-seaborn
-scipy
-torch
-gym
-tensorboard
