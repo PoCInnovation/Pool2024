@@ -2,9 +2,13 @@
 
 - ## Day 5: NLP and GNNs
 
-  - ### Module 1: Natural Language Processing
+  - ### Module 1: Natural Language Processing Intro
 
     - **Notebook:** [`nlp.ipynb`](./nlp.ipynb)
+
+  - ### Module 2: Natural Language Processing Theory
+
+    - **Notebook:** [`nlp-day.ipynb`](./nlp-day.ipynb)
 
   - ### Module 3: GNNs
     - [**Write-up**](./gnn/README.md)
